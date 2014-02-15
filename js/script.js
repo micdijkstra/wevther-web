@@ -53,10 +53,10 @@ function fadeWeather() {
   }
 
   if (fadeOpacity >= 0) {
-    $('.weatherBody .fade, .weatherFoot .fade').css('opacity', fadeOpacity);
-    $('.weatherBody, .weatherFoot').css('display', 'block');
+    $('.forecastPage .fade').css('opacity', fadeOpacity);
+    $('.forecastPage .fade').css('display', 'block');
   } else {
-    $('.weatherBody, .weatherFoot').css('display', 'none');
+    $('.forecastPage .fade').css('display', 'none');
   }
 }
 
