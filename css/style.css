@@ -155,7 +155,7 @@ body {
 
 .ie .page {
   /* Fixes for IE6-8 http://jonikorpi.com/leaving-old-IE-behind */
-  width: 480px;
+  width: 768px;
   margin: 0 auto;
 }
 
@@ -373,7 +373,7 @@ body {
   width: auto;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
   .lap-row, .lap-lastCol {
     overflow: hidden;
     *overflow: visible;
@@ -580,7 +580,7 @@ body {
     width: auto;
   }
 }
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 1500px) {
   .desk-row, .desk-lastCol {
     overflow: hidden;
     *overflow: visible;
@@ -992,6 +992,7 @@ body {
   * @package    Helper
   * @subpackage Display
 **/
+/* Palm */
 .block {
   display: block;
 }
@@ -1008,6 +1009,42 @@ body {
   display: inline-block;
 }
 
+/* Lap */
+@media only screen and (min-width: 768px) {
+  .lap-block {
+    display: block;
+  }
+
+  .lap-hide {
+    display: none;
+  }
+
+  .lap-inline {
+    display: inline;
+  }
+
+  .lap-inlineBlock {
+    display: inline-block;
+  }
+}
+/* Desk */
+@media only screen and (min-width: 1500px) {
+  .desk-block {
+    display: block;
+  }
+
+  .desk-hide {
+    display: none;
+  }
+
+  .desk-inline {
+    display: inline;
+  }
+
+  .desk-inlineBlock {
+    display: inline-block;
+  }
+}
 /**
   * Form
   *
@@ -1023,7 +1060,7 @@ label, input, button, select, textarea {
 
 label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
@@ -1033,7 +1070,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   display: inline-block;
   height: 17px;
   padding: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-size: 12px;
   line-height: 1.4em;
   color: #333333;
@@ -1128,7 +1165,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 /**
@@ -1146,7 +1183,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 
 .media .img {
   float: left;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .media .img img {
@@ -1155,7 +1192,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 
 .media .imgExt {
   float: right;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 /**
@@ -1176,9 +1213,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 .fluid .img {
   display: block;
   height: auto;
-  margin: 0 auto;
   max-width: 100%;
-  width: 100%;
 }
 
 /**
@@ -1189,7 +1224,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
  * @subpackage Module
 **/
 .mod {
-  margin: 10px;
+  margin: 15px;
 }
 
 .bd, .ft, .hd {
@@ -1255,15 +1290,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .ptm, .pvm, .pam {
-  padding-top: 10px !important;
+  padding-top: 15px !important;
 }
 
 .ptl, .pvl, .pal {
-  padding-top: 20px !important;
+  padding-top: 30px !important;
 }
 
 .pth, .pvh, .pah {
-  padding-top: 40px !important;
+  padding-top: 90px !important;
 }
 
 .prn, .phn, .pan {
@@ -1279,15 +1314,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .prm, .phm, .pam {
-  padding-right: 10px !important;
+  padding-right: 15px !important;
 }
 
 .prl, .phl, .pal {
-  padding-right: 20px !important;
+  padding-right: 30px !important;
 }
 
 .prh, .phh, .pah {
-  padding-right: 40px !important;
+  padding-right: 90px !important;
 }
 
 .pbn, .pvn, .pan {
@@ -1303,15 +1338,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .pbm, .pvm, .pam {
-  padding-bottom: 10px !important;
+  padding-bottom: 15px !important;
 }
 
 .pbl, .pvl, .pal {
-  padding-bottom: 20px !important;
+  padding-bottom: 30px !important;
 }
 
 .pbh, .pvh, .pah {
-  padding-bottom: 40px !important;
+  padding-bottom: 90px !important;
 }
 
 .pln, .phn, .pan {
@@ -1327,15 +1362,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .plm, .phm, .pam {
-  padding-left: 10px !important;
+  padding-left: 15px !important;
 }
 
 .pll, .phl, .pal {
-  padding-left: 20px !important;
+  padding-left: 30px !important;
 }
 
 .plh, .phh, .pah {
-  padding-left: 40px !important;
+  padding-left: 90px !important;
 }
 
 .mtn, .mvn, .man {
@@ -1351,15 +1386,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mtm, .mvm, .mam {
-  margin-top: 10px !important;
+  margin-top: 15px !important;
 }
 
 .mtl, .mvl, .mal {
-  margin-top: 20px !important;
+  margin-top: 30px !important;
 }
 
 .mth, .mvh, .mah {
-  margin-top: 40px !important;
+  margin-top: 90px !important;
 }
 
 .mrn, .mhn, .man {
@@ -1375,15 +1410,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mrm, .mhm, .mam {
-  margin-right: 10px !important;
+  margin-right: 15px !important;
 }
 
 .mrl, .mhl, .mal {
-  margin-right: 20px !important;
+  margin-right: 30px !important;
 }
 
 .mrh, .mhh, .mah {
-  margin-right: 40px !important;
+  margin-right: 90px !important;
 }
 
 .mbn, .mvn, .man {
@@ -1399,15 +1434,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mbm, .mvm, .mam {
-  margin-bottom: 10px !important;
+  margin-bottom: 15px !important;
 }
 
 .mbl, .mvl, .mal {
-  margin-bottom: 20px !important;
+  margin-bottom: 30px !important;
 }
 
 .mbh, .mvh, .mah {
-  margin-bottom: 40px !important;
+  margin-bottom: 90px !important;
 }
 
 .mln, .mhn, .man {
@@ -1423,19 +1458,19 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mlm, .mhm, .mam {
-  margin-left: 10px !important;
+  margin-left: 15px !important;
 }
 
 .mll, .mhl, .mal {
-  margin-left: 20px !important;
+  margin-left: 30px !important;
 }
 
 .mlh, .mhh, .mah {
-  margin-left: 40px !important;
+  margin-left: 90px !important;
 }
 
 /* Lap */
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
   .lap-ptn, .lap-pvn, .lap-pan {
     padding-top: 0px !important;
   }
@@ -1449,15 +1484,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-ptm, .lap-pvm, .lap-pam {
-    padding-top: 10px !important;
+    padding-top: 15px !important;
   }
 
   .lap-ptl, .lap-pvl, .lap-pal {
-    padding-top: 20px !important;
+    padding-top: 30px !important;
   }
 
   .lap-pth, .lap-pvh, .lap-pah {
-    padding-top: 40px !important;
+    padding-top: 90px !important;
   }
 
   .lap-prn, .lap-phn, .lap-pan {
@@ -1473,15 +1508,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-prm, .lap-phm, .lap-pam {
-    padding-right: 10px !important;
+    padding-right: 15px !important;
   }
 
   .lap-prl, .lap-phl, .lap-pal {
-    padding-right: 20px !important;
+    padding-right: 30px !important;
   }
 
   .lap-prh, .lap-phh, .lap-pah {
-    padding-right: 40px !important;
+    padding-right: 90px !important;
   }
 
   .lap-pbn, .lap-pvn, .lap-pan {
@@ -1497,15 +1532,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-pbm, .lap-pvm, lap-.pam {
-    padding-bottom: 10px !important;
+    padding-bottom: 15px !important;
   }
 
   .lap-pbl, .lap-pvl, .lap-pal {
-    padding-bottom: 20px !important;
+    padding-bottom: 30px !important;
   }
 
   .lap-pbh, .lap-pvh, .lap-pah {
-    padding-bottom: 40px !important;
+    padding-bottom: 90px !important;
   }
 
   .lap-pln, .lap-phn, .lap-pan {
@@ -1521,15 +1556,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-plm, .lap-phm, .lap-pam {
-    padding-left: 10px !important;
+    padding-left: 15px !important;
   }
 
   .lap-pll, .lap-phl, .lap-pal {
-    padding-left: 20px !important;
+    padding-left: 30px !important;
   }
 
   .lap-plh, .lap-phh, .lap-pah {
-    padding-left: 40px !important;
+    padding-left: 90px !important;
   }
 
   .lap-mtn, .lap-mvn, .lap-man {
@@ -1545,15 +1580,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mtm, .lap-mvm, .lap-mam {
-    margin-top: 10px !important;
+    margin-top: 15px !important;
   }
 
   .lap-mtl, .lap-mvl, .lap-mal {
-    margin-top: 20px !important;
+    margin-top: 30px !important;
   }
 
   .lap-mth, .lap-mvh, .lap-mah {
-    margin-top: 40px !important;
+    margin-top: 90px !important;
   }
 
   .lap-mrn, .lap-mhn, .lap-man {
@@ -1569,15 +1604,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mrm, .lap-mhm, .lap-mam {
-    margin-right: 10px !important;
+    margin-right: 15px !important;
   }
 
   .lap-mrl, .lap-mhl, .lap-mal {
-    margin-right: 20px !important;
+    margin-right: 30px !important;
   }
 
   .lap-mrh, .lap-mhh, .lap-mah {
-    margin-right: 40px !important;
+    margin-right: 90px !important;
   }
 
   .lap-mbn, .lap-mvn, .lap-man {
@@ -1593,15 +1628,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mbm, .lap-mvm, .lap-mam {
-    margin-bottom: 10px !important;
+    margin-bottom: 15px !important;
   }
 
   .lap-mbl, .lap-mvl, .lap-mal {
-    margin-bottom: 20px !important;
+    margin-bottom: 30px !important;
   }
 
   .lap-mbh, .lap-mvh, .lap-mah {
-    margin-bottom: 40px !important;
+    margin-bottom: 90px !important;
   }
 
   .lap-mln, .lap-mhn, .lap-man {
@@ -1617,19 +1652,19 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mlm, .lap-mhm, .lap-mam {
-    margin-left: 10px !important;
+    margin-left: 15px !important;
   }
 
   .lap-mll, .lap-mhl, .lap-mal {
-    margin-left: 20px !important;
+    margin-left: 30px !important;
   }
 
   .lap-mlh, .lap-mhh, .lap-mah {
-    margin-left: 40px !important;
+    margin-left: 90px !important;
   }
 }
 /* Desk */
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 1500px) {
   .desk-ptn, .desk-pvn, .desk-pan {
     padding-top: 0px !important;
   }
@@ -1643,15 +1678,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-ptm, .desk-pvm, .desk-pam {
-    padding-top: 10px !important;
+    padding-top: 15px !important;
   }
 
   .desk-ptl, .desk-pvl, .desk-pal {
-    padding-top: 20px !important;
+    padding-top: 30px !important;
   }
 
   .desk-pth, .desk-pvh, .desk-pah {
-    padding-top: 40px !important;
+    padding-top: 90px !important;
   }
 
   .desk-prn, .desk-phn, .desk-pan {
@@ -1667,15 +1702,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-prm, .desk-phm, .desk-pam {
-    padding-right: 10px !important;
+    padding-right: 15px !important;
   }
 
   .desk-prl, .desk-phl, .desk-pal {
-    padding-right: 20px !important;
+    padding-right: 30px !important;
   }
 
   .desk-prh, .desk-phh, .desk-pah {
-    padding-right: 40px !important;
+    padding-right: 90px !important;
   }
 
   .desk-pbn, .desk-pvn, .desk-pan {
@@ -1691,15 +1726,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-pbm, .desk-pvm, desk-.pam {
-    padding-bottom: 10px !important;
+    padding-bottom: 15px !important;
   }
 
   .desk-pbl, .desk-pvl, .desk-pal {
-    padding-bottom: 20px !important;
+    padding-bottom: 30px !important;
   }
 
   .desk-pbh, .desk-pvh, .desk-pah {
-    padding-bottom: 40px !important;
+    padding-bottom: 90px !important;
   }
 
   .desk-pln, .desk-phn, .desk-pan {
@@ -1715,15 +1750,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-plm, .desk-phm, .desk-pam {
-    padding-left: 10px !important;
+    padding-left: 15px !important;
   }
 
   .desk-pll, .desk-phl, .desk-pal {
-    padding-left: 20px !important;
+    padding-left: 30px !important;
   }
 
   .desk-plh, .desk-phh, .desk-pah {
-    padding-left: 40px !important;
+    padding-left: 90px !important;
   }
 
   .desk-mtn, .desk-mvn, .desk-man {
@@ -1739,15 +1774,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mtm, .desk-mvm, .desk-mam {
-    margin-top: 10px !important;
+    margin-top: 15px !important;
   }
 
   .desk-mtl, .desk-mvl, .desk-mal {
-    margin-top: 20px !important;
+    margin-top: 30px !important;
   }
 
   .desk-mth, .desk-mvh, .desk-mah {
-    margin-top: 40px !important;
+    margin-top: 90px !important;
   }
 
   .desk-mrn, .desk-mhn, .desk-man {
@@ -1763,15 +1798,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mrm, .desk-mhm, .desk-mam {
-    margin-right: 10px !important;
+    margin-right: 15px !important;
   }
 
   .desk-mrl, .desk-mhl, .desk-mal {
-    margin-right: 20px !important;
+    margin-right: 30px !important;
   }
 
   .desk-mrh, .desk-mhh, .desk-mah {
-    margin-right: 40px !important;
+    margin-right: 90px !important;
   }
 
   .desk-mbn, .desk-mvn, .desk-man {
@@ -1787,15 +1822,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mbm, .desk-mvm, .desk-mam {
-    margin-bottom: 10px !important;
+    margin-bottom: 15px !important;
   }
 
   .desk-mbl, .desk-mvl, .desk-mal {
-    margin-bottom: 20px !important;
+    margin-bottom: 30px !important;
   }
 
   .desk-mbh, .desk-mvh, .desk-mah {
-    margin-bottom: 40px !important;
+    margin-bottom: 90px !important;
   }
 
   .desk-mln, .desk-mhn, .desk-man {
@@ -1811,15 +1846,15 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mlm, .desk-mhm, .desk-mam {
-    margin-left: 10px !important;
+    margin-left: 15px !important;
   }
 
   .desk-mll, .desk-mhl, .desk-mal {
-    margin-left: 20px !important;
+    margin-left: 30px !important;
   }
 
   .desk-mlh, .desk-mhh, .desk-mah {
-    margin-left: 40px !important;
+    margin-left: 90px !important;
   }
 }
 /**
@@ -1878,33 +1913,52 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 /******************************************************************
   Typography
 ******************************************************************/
+.dark {
+  color: black;
+}
+
+.light {
+  color: #bcbec0;
+}
+
+.highlight {
+  color: #fa7070;
+}
+
 a {
-  color: #4183c4;
+  color: black;
   text-decoration: none;
 }
 
 a:hover {
-  color: #4183c4;
-  text-decoration: underline;
+  color: #fa7070;
+  text-decoration: none;
+}
+
+a.active {
+  color: #fa7070;
+  text-decoration: none;
 }
 
 a:active, a:focus {
+  color: #fa7070;
   outline: 0;
 }
 
 hr {
-  color: #ccc;
-  background: #ccc;
+  color: black;
+  background: black;
   border: none;
   display: block;
   height: 3px;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 body {
+  color: black;
   font-size: 12px;
-  font-family: Helmut, Helvetica, Arial, sans-serf;
-  font-weight: 500;
+  font-family: Helvetica-Neue, Helvetica, Helmut, Arial, sans-serf;
+  font-weight: 700;
   line-height: 1.0em;
 }
 
@@ -1914,6 +1968,98 @@ p, li {
   margin-bottom: 1.4em;
 }
 
+.fst {
+  font-size: 10px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fss {
+  font-size: 10px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fsm {
+  font-size: 15px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fsl {
+  font-size: 20px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fsh {
+  font-size: 30px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+@media only screen and (min-width: 768px) {
+  .fst {
+    font-size: 15px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fss {
+    font-size: 15px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsm {
+    font-size: 20px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsl {
+    font-size: 50px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsh {
+    font-size: 70px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .fst {
+    font-size: 15px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fss {
+    font-size: 20px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsm {
+    font-size: 30px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsl {
+    font-size: 60px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsh {
+    font-size: 100px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+}
 h1, .h1 {
   font-weight: 700;
   font-size: 36px;
@@ -1935,7 +2081,7 @@ h3, .h3 {
   margin-bottom: 0.5em;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
   p, li {
     font-size: 14px;
     line-height: 1.4em;
@@ -1963,7 +2109,7 @@ h3, .h3 {
     margin-bottom: 0.5em;
   }
 }
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 1500px) {
   p, li {
     font-size: 16px;
     line-height: 1.4em;
@@ -2025,27 +2171,24 @@ h3, .h3 {
   position: relative;
   overflow: visible;
   display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid #d4d4d4;
+  padding: 30px 15px;
+  border: none;
   margin: 0;
   text-decoration: none;
   text-align: center;
-  text-shadow: 1px 1px 0 #fff;
-  font: 11px/normal sans-serif;
-  color: #333;
+  text-shadow: none;
+  font-size: 15px;
+  line-height: 20px;
+  height: 20px;
+  color: white;
   white-space: nowrap;
   cursor: pointer;
   outline: none;
-  background-color: #ececec;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
-  background-image: -moz-linear-gradient(#f4f4f4, #ececec);
-  background-image: -ms-linear-gradient(#f4f4f4, #ececec);
-  background-image: -o-linear-gradient(#f4f4f4, #ececec);
-  background-image: linear-gradient(#f4f4f4, #ececec);
+  background-color: #fa7070;
   -moz-background-clip: padding;
   /* for Firefox 3.6 */
   background-clip: padding-box;
-  border-radius: 0.2em;
+  border-radius: 0;
   zoom: 1;
   *display: inline;
 }
@@ -2054,31 +2197,135 @@ h3, .h3 {
 .btn:focus,
 .btn:active,
 .btn.active {
-  border-color: #3072b3;
-  border-bottom-color: #2a65a0;
+  border-color: none;
   text-decoration: none;
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+  text-shadow: none;
   color: #fff;
-  background-color: #3c8dde;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
-  background-image: -moz-linear-gradient(#599bdc, #3072b3);
-  background-image: -o-linear-gradient(#599bdc, #3072b3);
-  background-image: linear-gradient(#599bdc, #3072b3);
+  background-color: #db6161;
 }
 
 .btn:active,
 .btn.active {
-  border-color: #2a65a0;
-  border-bottom-color: #3884cd;
-  background-color: #3072b3;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3072b3), to(#599bdc));
-  background-image: -moz-linear-gradient(#3072b3, #599bdc);
-  background-image: -ms-linear-gradient(#3072b3, #599bdc);
-  background-image: -o-linear-gradient(#3072b3, #599bdc);
-  background-image: linear-gradient(#3072b3, #599bdc);
+  border-color: none;
+  background-color: #db6161;
 }
 
 .btn::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+
+.btnBlock {
+  width: 250px;
+}
+
+@media only screen and (min-width: 768px) {
+  .btnBlock {
+    width: 386px;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+}
+/* Product Page */
+.conditionImg {
+  width: 210px !important;
+}
+
+@media only screen and (min-width: 1500px) {
+  .conditionImg {
+    width: 281px !important;
+  }
+}
+.weatherPage {
+  padding-top: 120px;
+}
+
+.productPage {
+  width: 320px;
+  padding-top: 308px;
+  margin: 0;
+}
+
+.productPage .body .foot {
+  bottom: 20px;
+}
+
+.block {
+  position: absolute;
+  width: 260px;
+}
+
+.block .meta {
+  width: 100px;
+  margin: 30px 0px 0 180px;
+}
+.block .buy {
+  bottom: 0;
+  margin: 0px 0 -15px -15px;
+}
+.block .buy img {
+  height: 50px;
+  width: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .block .meta {
+    width: 240px;
+    margin: 40px 0px 0 200px;
+  }
+  .block .buy {
+    bottom: 0;
+    margin: 0px 0 -25px -25px;
+  }
+  .block .buy img {
+    height: 75px;
+    width: 75px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .block .meta {
+    width: 320px;
+    margin: 60px 0px 0 380px;
+  }
+  .block .buy {
+    bottom: 0;
+    margin: 0px 0 -30px -30px;
+  }
+  .block .buy img {
+    height: 100px;
+    width: 100px;
+  }
+}
+.block:hover .meta {
+  display: block;
+}
+.block:hover .buy {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .productPage {
+    padding-top: 508px;
+    width: 768px;
+  }
+
+  .block {
+    width: 384px;
+  }
+
+  .productPage .body .foot {
+    right: 30px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .productPage {
+    padding-top: 628px;
+    width: 1500px;
+  }
+
+  .block {
+    width: 750px;
+  }
 }

@@ -1,6 +1,6 @@
 /* Page Breaks */
-$lap-break-point:             480px;
-$desk-break-point:            980px;
+$lap-break-point:             768px;
+$desk-break-point:            1500px;
 $max-page-width:              100%;
 $ie-max-page-width:           640px;
 
@@ -35,9 +35,9 @@ $desk-base-height:            22px; /* base-font-size * base-line*height */
 /* Spacing */
 $tiny-spacing:                2px;
 $small-spacing:               5px; /* half spacing */
-$medium-spacing:              10px; /* full spacing */
-$large-spacing:               20px; /* double spacing */
-$huge-spacing:                40px; /* double double spacing */
+$medium-spacing:              15px; /* full spacing */
+$large-spacing:               30px; /* double spacing */
+$huge-spacing:                90px; /* double double spacing */
 
 /* Border Width */
 $border-tiny:                 1px;

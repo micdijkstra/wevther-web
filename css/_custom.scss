@@ -6,23 +6,38 @@
   Typography
 ******************************************************************/
 
+$dark:          #000000;
+$light:         #BCBEC0;
+$highlight:     #FA7070;
+$highlightDark: #DB6161;
+
+.dark { color: $dark; }
+.light { color: $light; }
+.highlight { color: $highlight; }
+
 a {
-  color: #4183c4;
+  color: $dark;
   text-decoration: none;
 }
 
 a:hover {
-  color: #4183c4;
-  text-decoration: underline;
+  color: $highlight;
+  text-decoration: none;
+}
+
+a.active {
+  color: $highlight;
+  text-decoration: none;
 }
 
 a:active, a:focus {
+  color: $highlight;
   outline: 0;
 }
 
 hr {
-  color: #ccc;
-  background: #ccc;
+  color: $dark;
+  background: $dark;
   border: none;
   display: block;
   height: 3px;
@@ -30,9 +45,10 @@ hr {
 }
 
 body {
+  color: $dark;
   font-size: $base-font-size;
-  font-family: Helmut, Helvetica, Arial, sans-serf;
-  font-weight: 500;
+  font-family: Helvetica-Neue, Helvetica, Helmut, Arial, sans-serf;
+  font-weight: 700;
   line-height: 1.0em;
 }
 
@@ -40,6 +56,100 @@ p,li {
   font-size: $base-font-size;
   line-height: $base-line-height;
   margin-bottom: $base-line-height;
+}
+
+.fst {
+  font-size: 10px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fss {
+  font-size: 10px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fsm {
+  font-size: 15px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fsl {
+  font-size: 20px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+.fsh {
+  font-size: 30px;
+  line-height: 1.0em;
+  margin-bottom: 1.0em;
+}
+
+@include media-query(lap){
+  .fst {
+    font-size: 15px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fss {
+    font-size: 15px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsm {
+    font-size: 20px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsl {
+    font-size: 50px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsh {
+    font-size: 70px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+}
+
+@include media-query(desk){
+  .fst {
+    font-size: 15px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fss {
+    font-size: 20px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsm {
+    font-size: 30px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsl {
+    font-size: 60px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
+
+  .fsh {
+    font-size: 100px;
+    line-height: 1.0em;
+    margin-bottom: 1.0em;
+  }
 }
 
 h1, .h1 {
@@ -142,26 +252,23 @@ h3, .h3 {
   position: relative;
   overflow: visible;
   display: inline-block;
-  padding: 0.5em 1em;
-  border: 1px solid #d4d4d4;
+  padding: 30px 15px;
+  border: none;
   margin: 0;
   text-decoration: none;
   text-align: center;
-  text-shadow: 1px 1px 0 #fff;
-  font:11px/normal sans-serif;
-  color: #333;
+  text-shadow: none;
+  font-size: 15px;
+  line-height: 20px;
+  height: 20px;
+  color: white;
   white-space: nowrap;
   cursor: pointer;
   outline: none;
-  background-color: #ececec;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
-  background-image: -moz-linear-gradient(#f4f4f4, #ececec);
-  background-image: -ms-linear-gradient(#f4f4f4, #ececec);
-  background-image: -o-linear-gradient(#f4f4f4, #ececec);
-  background-image: linear-gradient(#f4f4f4, #ececec);
+  background-color: $highlight;
   -moz-background-clip: padding; /* for Firefox 3.6 */
   background-clip: padding-box;
-  border-radius: 0.2em;
+  border-radius: 0;
   zoom: 1;
   *display: inline;
 }
@@ -170,31 +277,139 @@ h3, .h3 {
 .btn:focus,
 .btn:active,
 .btn.active {
-  border-color: #3072b3;
-  border-bottom-color: #2a65a0;
+  border-color: none;
   text-decoration: none;
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+  text-shadow: none;
   color: #fff;
-  background-color: #3c8dde;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
-  background-image: -moz-linear-gradient(#599bdc, #3072b3);
-  background-image: -o-linear-gradient(#599bdc, #3072b3);
-  background-image: linear-gradient(#599bdc, #3072b3);
+  background-color: $highlightDark;
 }
 
 .btn:active,
 .btn.active {
-  border-color: #2a65a0;
-  border-bottom-color: #3884cd;
-  background-color: #3072b3;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3072b3), to(#599bdc));
-  background-image: -moz-linear-gradient(#3072b3, #599bdc);
-  background-image: -ms-linear-gradient(#3072b3, #599bdc);
-  background-image: -o-linear-gradient(#3072b3, #599bdc);
-  background-image: linear-gradient(#3072b3, #599bdc);
+  border-color: none;
+  background-color: $highlightDark;
 }
 
 .btn::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+
+.btnBlock {
+  width: 250px
+}
+
+@include media-query(lap){
+  .btnBlock { width: 386px; }
+  .btn { font-size: 20px; }
+}
+
+/* Product Page */
+
+.conditionImg {
+  width: 210px !important;
+}
+
+@include media-query(desk){
+  .conditionImg {
+    width: 281px !important;
+  }
+}
+
+.weatherPage {
+  padding-top: 120px;
+}
+
+.productPage {
+  width: 320px;
+  padding-top: 308px;
+  margin: 0;
+}
+.productPage .body .foot {
+  bottom: 20px;
+}
+.block {
+  position: absolute;
+  width: 260px;
+}
+
+.block{
+  .meta {
+    width: 100px;
+    margin: 30px 0px 0 180px;
+  }
+
+  .buy {
+    bottom: 0;
+    margin: 0px 0 -15px -15px;
+
+    img {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+
+@include media-query(lap){
+  .block{
+    .meta {
+      width: 240px;
+      margin: 40px 0px 0 200px;
+    }
+
+    .buy {
+      bottom: 0;
+      margin: 0px 0 -25px -25px;
+
+      img {
+        height: 75px;
+        width: 75px;
+      }
+    }
+  }
+}
+
+@include media-query(desk){
+  .block{
+    .meta {
+      width: 320px;
+      margin: 60px 0px 0 380px;
+    }
+
+    .buy {
+      bottom: 0;
+      margin: 0px 0 -30px -30px;
+
+      img {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+}
+
+.block:hover {
+  .meta {
+    display: block;
+  }
+  .buy {
+    display: block;
+  }
+}
+
+@include media-query(lap){
+  .productPage {
+    padding-top: 508px;
+    width: 768px;
+  }
+  .block { width: 384px; }
+  .productPage .body .foot { right: 30px; }
+}
+
+@include media-query(desk){
+  .productPage {
+    padding-top: 628px;
+    width: 1500px;
+  }
+  .block { width: 750px; }
 }
