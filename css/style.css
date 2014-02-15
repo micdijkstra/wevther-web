@@ -2240,6 +2240,10 @@ h3, .h3 {
 }
 .forecastPage {
   padding-top: 70px;
+  pointer-events: none;
+}
+.forecastPage a {
+  pointer-events: auto;
 }
 
 .productPage {

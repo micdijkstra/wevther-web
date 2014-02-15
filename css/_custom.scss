@@ -318,6 +318,10 @@ h3, .h3 {
 
 .forecastPage {
   padding-top: 70px;
+  pointer-events: none;
+  a {
+    pointer-events: auto;
+  }
 }
 
 .productPage {
