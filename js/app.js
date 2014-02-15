@@ -34,5 +34,19 @@ App.ForecastRoute = Ember.Route.extend({
     temperature_type = $.cookie('temperature_type');
     location_id = $.cookie('location_id')
     return App.Forecast.findAll(temperature_type, location_id);
+  },
+  actions: {
+    loadSettings: function() {
+      this.toggleSettings();
+    },
+    closeSettings: function() {
+      this.toggleSettings();
+    }
+  },
+  toggleSettings: function() {
+    $('.settingsPage').fadeToggle();
+    $('.settingsClose').fadeToggle();
+    $('.settingsNav').toggleClass('active');
+    $('body').toggleClass('lockScroll')
   }
 });

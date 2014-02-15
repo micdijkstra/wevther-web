@@ -1913,6 +1913,14 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 /******************************************************************
   Typography
 ******************************************************************/
+body > .ember-view {
+  height: 100%;
+}
+
+.lockScroll {
+  overflow: hidden;
+}
+
 .dark {
   color: black;
 }
@@ -1921,8 +1929,24 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   color: #bcbec0;
 }
 
+.bright {
+  color: white;
+}
+
 .highlight {
   color: #fa7070;
+}
+
+.bgDarkT {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.bgActive {
+  background-color: #231f20;
+}
+
+.bgInactive {
+  background-color: #414042;
 }
 
 a {
@@ -2335,4 +2359,22 @@ h3, .h3 {
   .block {
     width: 750px;
   }
+}
+.settingsPage {
+  height: 100%;
+  width: 93%;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+.settingsClose {
+  right: 20px;
+  top: 72px;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 60px 0;
 }

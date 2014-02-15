@@ -22,18 +22,80 @@
   </head>
 
   <body>
-    <div class="page fixed span1of1 front">
-      <div class="head">
-        <div class="mod mtl mhl mbm">
-          <div class="media">
-            <img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">
-            <a href="" class="fst hide lap-block imgExt">Settings</a>
-            <a href="" class="fst hide mhh lap-block imgExt">Blog</a>
-            <a href="" class="fst hide mlh lap-block imgExt">Information</a>
+    <script type="text/x-handlebars">
+      <a href="" {{action 'closeSettings'}} class="settingsClose fixed hide"><img src="img/close.png" width="73" height="73" alt="Close"></a>
+      <div class="page settingsPage fixed bgDarkT bright hide">
+        <div class="main settingsMain">
+          <div class="head">
+            <div class="mod mtl mhl mbm">
+              <div class="media">
+                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+              </div>
+            </div>
+          </div>
+
+          <div class="mod mth ptl lap-mhl">
+            <p class="bright fsm">Temperature in</p>
+            <div class="row">
+              <div class="col span1of2">
+                <div class="pvl txtC bgActive">
+                  <p class="mvl">C&deg;</p>
+                </div>
+              </div>
+
+              <div class="col span1of2">
+                <div class="pvl txtC bgInactive">
+                  <p class="mvl">F&deg;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mod mth ptl lap-mhl">
+            <p class="bright fsm">Show me</p>
+            <div class="row">
+              <div class="col span1of3">
+                <div class="pvl txtC bgInactive">
+                  <p class="mvl">men's</p>
+                </div>
+              </div>
+
+              <div class="col span1of3">
+                <div class="pvl txtC bgActive">
+                  <p class="mvl">all</p>
+                </div>
+              </div>
+
+              <div class="col span1of3">
+                <div class="pvl txtC bgInactive">
+                  <p class="mvl">women's</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mod mth ptl lap-mhl">
+            <p class="bright fsm">Weather for</p>
+            <input class="span1of1 bgActive bcActive fsm bright" placeholder="Enter city and country">
           </div>
         </div>
       </div>
-    </div>
+
+      <div class="page fixed span1of1 front">
+        <div class="head">
+          <div class="mod mtl mhl mbm">
+            <div class="media">
+              {{#link-to 'forecast'}}<img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+              <a href="" class="fst hide lap-block imgExt settingsNav" {{action 'loadSettings'}}>Settings</a>
+              <a href="" class="fst hide mhh lap-block imgExt blogNav">Blog</a>
+              <a href="" class="fst hide mlh lap-block imgExt informationNav">Information</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{outlet}}
+    </script>
 
     <script type="text/x-handlebars" data-template-name="forecast">
       <div class="page forecastPage fixed span1of1">
@@ -112,6 +174,7 @@
     <script src="js/libs/jquery.cookie.js"></script>
     <script src="js/libs/imagesloaded.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/controllers/forecast_controller.js"></script>
     <script src="js/views/forecast_view.js"></script>
     <script src="js/script.js"></script>
 

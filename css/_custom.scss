@@ -6,14 +6,31 @@
   Typography
 ******************************************************************/
 
+body > .ember-view {
+  height: 100%;
+}
+
+.lockScroll {
+  overflow: hidden;
+}
+
 $dark:          #000000;
 $light:         #BCBEC0;
+$bright:        #FFFFFF;
 $highlight:     #FA7070;
 $highlightDark: #DB6161;
 
-.dark { color: $dark; }
-.light { color: $light; }
-.highlight { color: $highlight; }
+$active:      #231F20;
+$inactive:        #414042;
+
+.dark { color: $dark }
+.light { color: $light }
+.bright { color: $bright }
+.highlight { color: $highlight }
+
+.bgDarkT { background-color: rgba(0,0,0,0.9) }
+.bgActive { background-color: $active }
+.bgInactive { background-color: $inactive }
 
 a {
   color: $dark;
@@ -418,4 +435,23 @@ h3, .h3 {
     width: 1500px;
   }
   .block { width: 750px; }
+}
+
+.settingsPage {
+  height: 100%;
+  width: 93%;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+.settingsClose {
+  right: 20px;
+  top: 72px;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 60px 0;
 }
