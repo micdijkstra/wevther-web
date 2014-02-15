@@ -12,7 +12,6 @@ function setupBlocks() {
   windowWidth = $('.productPage').width();
   colWidth = $('.block').outerWidth();
   blocks = [];
-  console.log(blocks);
   colCount = Math.floor(windowWidth/(colWidth+margin*2));
   for(var i=0;i<colCount;i++){
     blocks.push(margin);
@@ -66,8 +65,11 @@ Array.min = function(array) {
 };
 
 $( document ).ready(function() {
-  setupBlocks();
   $(window).scroll(function(event) {
     fadeWeather();
+  });
+
+  imagesLoaded($('.productPage')).on('progress', function( instance ) {
+    setupBlocks();
   });
 });

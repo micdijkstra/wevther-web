@@ -53,34 +53,30 @@
           </div>
 
           <div class="mod lap-mvm lap-mhl">
-            <p class="fsh mbn fade front">New York City</p>
+            <p class="fsh mbn fade front">{{view.location}}</p>
           </div>
 
           <div class="mod lap-mal">
-            <div class="fsh col mrm mbn lap-mrl fade front">37&deg;</div>
-            <div class="fsh col mrm mbn lap-mrl light fade front">37&deg;</div>
-            <div class="fsh col mrm mbn lap-mrl light fade front">37&deg;</div>
+            <div class="fsh col mrm mbn lap-mrl fade front">{{view.now}}&deg;</div>
+            <div class="fsh col mrm mbn lap-mrl light fade front">{{view.low}}&deg;</div>
+            <div class="fsh col mrm mbn lap-mrl light fade front">{{view.high}}&deg;</div>
           </div>
         </div>
 
         <div class="foot forecastFoot">
           <div class="mod lap-mal">
             <div class="fluid">
-              <img src="img/condition.png" width="281" height="188" alt="Condition text" class="img conditionImg fade front">
+              <img {{bind-attr src=view.icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg fade front"></img>
             </div>
           </div>
         </div>
       </div>
 
-      {{view App.ProductsView}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="products">
       <div class="page productPage">
         <div class="mod">
           <div class="body relative">
 
-            {{#each}}
+            {{#each product in view.products}}
               {{partial "product"}}
             {{/each}}
 
@@ -99,12 +95,12 @@
         <div class="mod lap-mal desk-mah">
           <div class="fluid">
             <div class="meta absolute hide">
-              <p class="fsl">Clark’s Desert Boot</p>
+              <p class="fsl">{{product.name}}</p>
             </div>
             <div class="buy absolute hide">
-              <a href="" target="_blank"><img src="img/buy.png" width="100" height="100" alt="Buy"></a>
+              <a {{bind-attr href=product.url}} target="_blank"><img src="img/buy.png" width="100" height="100" alt="Buy"></a>
             </div>
-            <img src="img/products/{{this}}.png" class="img">
+            <img {{bind-attr src=product.image_url alt=product.name}} class="img"></img>
           </div>
         </div>
       </div>
@@ -113,6 +109,8 @@
     <script src="js/libs/jquery-1.10.2.js"></script>
     <script src="js/libs/handlebars-1.1.2.js"></script>
     <script src="js/libs/ember-1.4.0.js"></script>
+    <script src="js/libs/jquery.cookie.js"></script>
+    <script src="js/libs/imagesloaded.js"></script>
     <script src="js/app.js"></script>
     <script src="js/views/forecast_view.js"></script>
     <script src="js/views/products_view.js"></script>
