@@ -119,7 +119,7 @@
           </div>
 
           <div class="mod lap-mal">
-            <div class="fsh col mrm mbn lap-mrl fade front">{{#if view.now}}{{view.now}}&deg;{{else}}&mdash;{{/if}}</div>
+            {{view App.TemperatureView temp=view.now}}
             {{view App.TemperatureView temp=view.low description='lo'}}
             {{view App.TemperatureView temp=view.high description='hi'}}
           </div>
@@ -171,7 +171,7 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="temperature">
-      <a class="fsh col mrm mbn lap-mrl light hoverLight ffh fade front pointer">{{view.temp}}&deg;</a>
+      <a {{bind-attr class=":fsh :col :mrm :mbn :lap-mrl :ffh :fade :front :pointer :modTemp :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
     </script>
 
     <script type="text/x-handlebars" data-template-name="information">

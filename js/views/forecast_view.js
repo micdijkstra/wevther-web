@@ -22,7 +22,7 @@ App.ForecastView = Ember.View.extend({
       setTimeout(function() {
         $('.modProducts').fadeIn();
         setupBlocks();
-     }, 500);
+     }, 1000);
     };
   }.observes('controller.isUpdated', 'controller.gender_type'),
 

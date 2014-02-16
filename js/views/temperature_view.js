@@ -1,10 +1,14 @@
 App.TemperatureView = Ember.View.extend({
   templateName: 'temperature',
   mouseEnter: function(evt) {
-    this.set('actual', this.get('temp'));
-    this.set('temp', this.get('description'));
+    if(this.get('description') != null) {
+      this.set('actual', this.get('temp'));
+      this.set('temp', this.get('description'));
+    }
   },
   mouseLeave: function(evt) {
-    this.set('temp', this.get('actual'));
+    if(this.get('description') != null) {
+      this.set('temp', this.get('actual'));
+    }
   }
 });

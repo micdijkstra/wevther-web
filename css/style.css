@@ -2236,6 +2236,16 @@ h3 {
   pointer-events: auto;
 }
 
+@media only screen and (min-width: 768px) {
+  .modTemp {
+    width: 130px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .modTemp {
+    width: 240px;
+  }
+}
 .productPage {
   width: 320px;
   padding-top: 308px;

@@ -4,6 +4,14 @@ App.ForecastController = Ember.ObjectController.extend({
   location_id: $.cookie('location_id'),
   location_name: $.cookie('location_name'),
   isToday: true,
+  isTomorrow: false,
+
+  reloadForecast: function() {
+    temperature_type = $.cookie('temperature_type');
+    location_id = $.cookie('location_id');
+    this.set('model', App.Forecast.findAll(temperature_type, location_id));
+    console.log('reloadForecast');
+  }.observes('temperature_type', 'location_id', 'location_name'),
 
   loadForecast: function() {
     this.set('isUpdated', false);
@@ -58,11 +66,6 @@ App.ForecastController = Ember.ObjectController.extend({
     tomorrow: function () {
       this.set('isToday', false);
       this.set('isTomorrow', true);
-    },
-    showLo: function() {
-      var temp = $('#forecastLow').txt();
-      $('#forecastLow').txt('Lo&deg;');
-      setTimeout(function() { $('#forecastLow').txt(temp); }, 500);
     }
   }
 });

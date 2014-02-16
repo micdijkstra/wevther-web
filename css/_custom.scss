@@ -293,6 +293,18 @@ h3 {
   }
 }
 
+@include media-query(lap){
+  .modTemp {
+    width: 130px;
+  }
+}
+
+@include media-query(desk){
+  .modTemp {
+    width: 240px;
+  }
+}
+
 .productPage {
   width: 320px;
   padding-top: 308px;
