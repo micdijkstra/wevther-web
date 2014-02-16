@@ -1965,6 +1965,10 @@ body > .ember-view {
   background-color: #231f20;
 }
 
+.hoverBgActive:hover {
+  background-color: #231f20;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -2374,6 +2378,15 @@ input::-moz-placeholder {
 }
 input:-ms-input-placeholder {
   font-weight: bold;
+}
+
+.modLocations > div {
+  padding: 40px 5%;
+}
+
+.locateLoader, .locateBtn {
+  right: 30px;
+  top: 120px;
 }
 
 .informationPage {

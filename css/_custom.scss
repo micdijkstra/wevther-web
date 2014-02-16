@@ -36,6 +36,7 @@ $inactive:        #414042;
 .bgBrightT { background-color: rgba(255,255,255,0.9) }
 .bgInactive { background-color: $inactive }
 .bgActive { background-color: $active }
+.hoverBgActive:hover { background-color: $active }
 
 a {
   color: $dark;
@@ -431,6 +432,15 @@ input {
   &:-moz-placeholder { font-weight: bold; }
   &::-moz-placeholder { font-weight: bold; }
   &:-ms-input-placeholder { font-weight: bold; }
+}
+
+.modLocations > div {
+  padding: 40px 5%;
+}
+
+.locateLoader, .locateBtn {
+  right: 30px;
+  top: 120px;
 }
 
 .informationPage {
