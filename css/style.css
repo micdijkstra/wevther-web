@@ -1055,7 +1055,7 @@ body {
 label, input, button, select, textarea {
   font-size: 12px;
   font-weight: normal;
-  line-height: 1.4em;
+  line-height: 1.75em;
 }
 
 label {
@@ -1068,11 +1068,11 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
-  height: 17px;
+  height: 21px;
   padding: 5px;
   margin-bottom: 15px;
   font-size: 12px;
-  line-height: 1.4em;
+  line-height: 1.75em;
   color: #333333;
 }
 
@@ -1123,9 +1123,9 @@ input[type="submit"], input[type="reset"], input[type="button"], input[type="rad
 
 select, input[type="file"] {
   font-size: 12px;
-  height: 17px;
+  height: 21px;
   margin-top: 5px;
-  line-height: 1.4em;
+  line-height: 1.75em;
 }
 
 select {
@@ -1144,7 +1144,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .radio, .checkbox {
-  min-height: 17px;
+  min-height: 21px;
   padding-left: 5px;
 }
 
@@ -1282,7 +1282,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .ptt, .pvt, .pat {
-  padding-top: 2px !important;
+  padding-top: 1px !important;
 }
 
 .pts, .pvs, .pas {
@@ -1306,7 +1306,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .prt, .pht, .pat {
-  padding-right: 2px !important;
+  padding-right: 1px !important;
 }
 
 .prs, .phs, .pas {
@@ -1330,7 +1330,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .pbt, .pvt, .pat {
-  padding-bottom: 2px !important;
+  padding-bottom: 1px !important;
 }
 
 .pbs, .pvs, .pas {
@@ -1354,7 +1354,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .plt, .pht, .pat {
-  padding-left: 2px !important;
+  padding-left: 1px !important;
 }
 
 .pls, .phs, .pas {
@@ -1378,7 +1378,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mtt, .mvt, .mat {
-  margin-top: 2px !important;
+  margin-top: 1px !important;
 }
 
 .mts, .mvs, .mas {
@@ -1402,7 +1402,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mrt, .mht, .mat {
-  margin-right: 2px !important;
+  margin-right: 1px !important;
 }
 
 .mrs, .mhs, .mas {
@@ -1426,7 +1426,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mbt, .mvt, .mat {
-  margin-bottom: 2px !important;
+  margin-bottom: 1px !important;
 }
 
 .mbs, .mvs, .mas {
@@ -1450,7 +1450,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 }
 
 .mlt, .mht, .mat {
-  margin-left: 2px !important;
+  margin-left: 1px !important;
 }
 
 .mls, .mhs, .mas {
@@ -1476,7 +1476,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-ptt, .lap-pvt, .lap-pat {
-    padding-top: 2px !important;
+    padding-top: 1px !important;
   }
 
   .lap-pts, .lap-pvs, .lap-pas {
@@ -1500,7 +1500,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-prt, .lap-pht, .lap-pat {
-    padding-right: 2px !important;
+    padding-right: 1px !important;
   }
 
   .lap-prs, .lap-phs, .lap-pas {
@@ -1524,7 +1524,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-pbt, .lap-pvt, .lap-pat {
-    padding-bottom: 2px !important;
+    padding-bottom: 1px !important;
   }
 
   .lap-pbs, .lap-pvs, .lap-pas {
@@ -1548,7 +1548,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-plt, .lap-pht, .lap-pat {
-    padding-left: 2px !important;
+    padding-left: 1px !important;
   }
 
   .lap-pls, .lap-phs, .lap-pas {
@@ -1572,7 +1572,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mtt, .lap-mvt, .lap-mat {
-    margin-top: 2px !important;
+    margin-top: 1px !important;
   }
 
   .lap-mts, .lap-mvs, .lap-mas {
@@ -1596,7 +1596,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mrt, .lap-mht, .lap-mat {
-    margin-right: 2px !important;
+    margin-right: 1px !important;
   }
 
   .lap-mrs, .lap-mhs, .lap-mas {
@@ -1620,7 +1620,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mbt, .lap-mvt, .lap-mat {
-    margin-bottom: 2px !important;
+    margin-bottom: 1px !important;
   }
 
   .lap-mbs, .lap-mvs, .lap-mas {
@@ -1644,7 +1644,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .lap-mlt, .lap-mht, .lap-mat {
-    margin-left: 2px !important;
+    margin-left: 1px !important;
   }
 
   .lap-mls, .lap-mhs, .lap-mas {
@@ -1670,7 +1670,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-ptt, .desk-pvt, .desk-pat {
-    padding-top: 2px !important;
+    padding-top: 1px !important;
   }
 
   .desk-pts, .desk-pvs, .desk-pas {
@@ -1694,7 +1694,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-prt, .desk-pht, .desk-pat {
-    padding-right: 2px !important;
+    padding-right: 1px !important;
   }
 
   .desk-prs, .desk-phs, .desk-pas {
@@ -1718,7 +1718,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-pbt, .desk-pvt, .desk-pat {
-    padding-bottom: 2px !important;
+    padding-bottom: 1px !important;
   }
 
   .desk-pbs, .desk-pvs, .desk-pas {
@@ -1742,7 +1742,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-plt, .desk-pht, .desk-pat {
-    padding-left: 2px !important;
+    padding-left: 1px !important;
   }
 
   .desk-pls, .desk-phs, .desk-pas {
@@ -1766,7 +1766,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mtt, .desk-mvt, .desk-mat {
-    margin-top: 2px !important;
+    margin-top: 1px !important;
   }
 
   .desk-mts, .desk-mvs, .desk-mas {
@@ -1790,7 +1790,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mrt, .desk-mht, .desk-mat {
-    margin-right: 2px !important;
+    margin-right: 1px !important;
   }
 
   .desk-mrs, .desk-mhs, .desk-mas {
@@ -1814,7 +1814,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mbt, .desk-mvt, .desk-mat {
-    margin-bottom: 2px !important;
+    margin-bottom: 1px !important;
   }
 
   .desk-mbs, .desk-mvs, .desk-mas {
@@ -1838,7 +1838,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   }
 
   .desk-mlt, .desk-mht, .desk-mat {
-    margin-left: 2px !important;
+    margin-left: 1px !important;
   }
 
   .desk-mls, .desk-mhs, .desk-mas {
@@ -1892,19 +1892,19 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
  * Line Height
  */
 .veryTight {
-  line-height: 0.5em;
+  line-height: 0.5em !important;
 }
 
 .tight {
-  line-height: 1.0em;
+  line-height: 1.0em !important;
 }
 
 .loose {
-  line-height: 2.0em;
+  line-height: 2.0em !important;
 }
 
 .veryLoose {
-  line-height: 2.5em;
+  line-height: 2.5em !important;
 }
 
 /**
@@ -1921,11 +1921,11 @@ body > .ember-view {
   overflow: hidden;
 }
 
-.dark {
-  color: black;
+.light {
+  color: #bcbec0;
 }
 
-.light {
+.hoverLight:hover {
   color: #bcbec0;
 }
 
@@ -1933,20 +1933,36 @@ body > .ember-view {
   color: white;
 }
 
+.dark {
+  color: black;
+}
+
+.dull {
+  color: #808285;
+}
+
 .highlight {
   color: #fa7070;
+}
+
+.bgDark {
+  background-color: black;
 }
 
 .bgDarkT {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.bgActive {
-  background-color: #231f20;
+.bgBrightT {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .bgInactive {
   background-color: #414042;
+}
+
+.bgActive {
+  background-color: #231f20;
 }
 
 a {
@@ -1969,6 +1985,14 @@ a:active, a:focus {
   outline: 0;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.tdu {
+  text-decoration: underline;
+}
+
 hr {
   color: black;
   background: black;
@@ -1981,186 +2005,125 @@ hr {
 body {
   color: black;
   font-size: 12px;
-  font-family: Helvetica-Neue, Helvetica, Helmut, Arial, sans-serf;
+  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf;
   font-weight: 700;
   line-height: 1.0em;
 }
 
 p, li {
   font-size: 12px;
-  line-height: 1.4em;
-  margin-bottom: 1.4em;
+  line-height: 1.75em;
+  margin-bottom: 1.75em;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.fst, .fss, .fsm, .fsl, .fsh {
+  line-height: 1.75em;
+  margin-bottom: 1.0em;
 }
 
 .fst {
   font-size: 10px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fss {
   font-size: 10px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fsm {
   font-size: 15px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fsl {
   font-size: 20px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fsh {
   font-size: 30px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 @media only screen and (min-width: 768px) {
+  .fst, .fss, .fsm, .fsl, .fsh {
+    line-height: 1.75em;
+  }
+
   .fst {
     font-size: 15px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fss {
     font-size: 15px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsm {
-    font-size: 20px;
-    line-height: 1.0em;
+    font-size: 30px;
     margin-bottom: 1.0em;
   }
 
   .fsl {
     font-size: 50px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsh {
     font-size: 70px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
+  }
+
+  p, li {
+    font-size: 14px;
+    margin-bottom: 1.75em;
   }
 }
 @media only screen and (min-width: 1500px) {
+  .fst, .fss, .fsm, .fsl, .fsh {
+    line-height: 1.75em;
+  }
+
   .fst {
     font-size: 15px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fss {
     font-size: 20px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsm {
-    font-size: 30px;
-    line-height: 1.0em;
+    font-size: 40px;
     margin-bottom: 1.0em;
   }
 
   .fsl {
     font-size: 60px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsh {
     font-size: 100px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
-}
-h1, .h1 {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.4em;
-  margin-bottom: 0.25em;
-}
 
-h2, .h2 {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1.4em;
-  margin-bottom: 0.333333em;
-}
-
-h3, .h3 {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.4em;
-  margin-bottom: 0.5em;
-}
-
-@media only screen and (min-width: 768px) {
-  p, li {
-    font-size: 14px;
-    line-height: 1.4em;
-    margin-bottom: 1.4em;
-  }
-
-  h1, .h1 {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.4em;
-    margin-bottom: 0.25em;
-  }
-
-  h2, .h2 {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.4em;
-    margin-bottom: 0.333333em;
-  }
-
-  h3, .h3 {
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 1.4em;
-    margin-bottom: 0.5em;
-  }
-}
-@media only screen and (min-width: 1500px) {
   p, li {
     font-size: 16px;
-    line-height: 1.4em;
-    margin-bottom: 1.4em;
-  }
-
-  h1, .h1 {
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 1.4em;
-    margin-bottom: 0.25em;
-  }
-
-  h2, .h2 {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.4em;
-    margin-bottom: 0.333333em;
-  }
-
-  h3, .h3 {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 1.4em;
-    margin-bottom: 0.5em;
+    line-height: 1.75em;
+    margin-bottom: 1.75em;
   }
 }
+.ffh {
+  font-family: Helvetica, Helmut, Arial, sans-serf;
+}
+
+.ffhn {
+  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf;
+}
+
 /******************************************************************
   Colors
 ******************************************************************/
@@ -2252,7 +2215,10 @@ h3, .h3 {
     font-size: 20px;
   }
 }
-/* Product Page */
+.navPage {
+  top: 0;
+}
+
 .conditionImg {
   width: 210px !important;
 }
@@ -2362,19 +2328,44 @@ h3, .h3 {
 }
 .settingsPage {
   height: 100%;
-  width: 93%;
   z-index: 1000;
   overflow-y: auto;
   overflow-x: visible;
 }
 
 .settingsClose {
-  right: 20px;
+  right: 22px;
   top: 72px;
+  z-index: 9999;
+}
+
+.settingsControl {
+  cursor: pointer;
+}
+.settingsControl:hover {
+  background: #231f20;
 }
 
 input {
   border: none;
   outline: none;
-  padding: 60px 0;
+  padding: 60px 5%;
+  width: 90%;
+  font-weight: bold;
+}
+input::-webkit-input-placeholder {
+  font-weight: bold;
+}
+input:-moz-placeholder {
+  font-weight: bold;
+}
+input::-moz-placeholder {
+  font-weight: bold;
+}
+input:-ms-input-placeholder {
+  font-weight: bold;
+}
+
+.informationPage {
+  padding-top: 70px;
 }

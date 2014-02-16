@@ -5,7 +5,10 @@ var windowWidth = 0;
 var blocks = [];
 
 $(function(){
-  $(window).resize(setupBlocks);
+  $(window).resize( function() {
+    setupBlocks();
+    setupSettingsPage();
+  });
 });
 
 function setupBlocks() {
@@ -29,7 +32,8 @@ function positionBlocks() {
       'top':min+'px',
       'z-index':'-1'
     });
-    blocks[index] = min+$(this).outerHeight()+margin;
+    var height = height = min+$(this).outerHeight()+margin;
+    blocks[index] = height;
   });
 }
 
@@ -64,9 +68,54 @@ Array.min = function(array) {
     return Math.min.apply(Math, array);
 };
 
+function toggleSettings() {
+  $('.settingsPage').fadeToggle();
+  $('.settingsClose').fadeToggle();
+  $('.settingsNav').toggleClass('active');
+  $('body').toggleClass('lockScroll')
+}
+
+function setupSettingsPage() {
+  $('.settingsPage').width($(window).width()-120);
+}
+
+function loadSettings() {
+  temperature_type = $.cookie('temperature_type');
+  location_id = $.cookie('location_id');
+  location_name = $.cookie('location_name');
+  gender_type = $.cookie('gender_type');
+
+  $("[data-control]").removeClass('bgActive dull');
+
+  $("[data-control-type='temperature_type'][data-control-value='" + temperature_type  + "']").addClass('bgActive dull');
+  $("[data-control-type='gender_type'][data-control-value='" + gender_type + "']").addClass('bgActive dull');
+
+  $("[data-control-location]").val(location_name);
+}
+
+function saveSetting(setting, value) {
+  var controller = App.__container__.lookup("controller:forecast");
+  controller.send('updateSetting', setting, value);
+}
+
 $( document ).ready(function() {
+  setupSettingsPage();
+  loadSettings();
+
   $(window).scroll(function(event) {
     fadeWeather();
+  });
+
+  $('[data-toggle-settings]').click(function() {
+    toggleSettings();
+    return false;
+  });
+
+  $('[data-control]').click(function() {
+    type = $(this).data('control-type');
+    value = $(this).data('control-value');
+    saveSetting(type, value);
+    loadSettings();
   });
 
   imagesLoaded($('.productPage')).on('progress', function( instance ) {

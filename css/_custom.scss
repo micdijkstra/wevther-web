@@ -15,6 +15,7 @@ body > .ember-view {
 }
 
 $dark:          #000000;
+$dull:          #808285;
 $light:         #BCBEC0;
 $bright:        #FFFFFF;
 $highlight:     #FA7070;
@@ -23,14 +24,18 @@ $highlightDark: #DB6161;
 $active:      #231F20;
 $inactive:        #414042;
 
-.dark { color: $dark }
 .light { color: $light }
+.hoverLight:hover { color: $light }
 .bright { color: $bright }
+.dark { color: $dark }
+.dull { color: $dull }
 .highlight { color: $highlight }
 
+.bgDark { background-color: $dark }
 .bgDarkT { background-color: rgba(0,0,0,0.9) }
-.bgActive { background-color: $active }
+.bgBrightT { background-color: rgba(255,255,255,0.9) }
 .bgInactive { background-color: $inactive }
+.bgActive { background-color: $active }
 
 a {
   color: $dark;
@@ -52,6 +57,14 @@ a:active, a:focus {
   outline: 0;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
+.tdu {
+  text-decoration: underline;
+}
+
 hr {
   color: $dark;
   background: $dark;
@@ -64,7 +77,7 @@ hr {
 body {
   color: $dark;
   font-size: $base-font-size;
-  font-family: Helvetica-Neue, Helvetica, Helmut, Arial, sans-serf;
+  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf;
   font-weight: 700;
   line-height: 1.0em;
 }
@@ -75,177 +88,114 @@ p,li {
   margin-bottom: $base-line-height;
 }
 
+h3 {
+  font-weight: bold;
+}
+
+.fst, .fss, .fsm, .fsl, .fsh {
+  line-height: $base-line-height;
+  margin-bottom: 1.0em;
+}
+
 .fst {
   font-size: 10px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fss {
   font-size: 10px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fsm {
   font-size: 15px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fsl {
   font-size: 20px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 .fsh {
   font-size: 30px;
-  line-height: 1.0em;
-  margin-bottom: 1.0em;
 }
 
 @include media-query(lap){
+  .fst, .fss, .fsm, .fsl, .fsh {
+    line-height: $lap-base-line-height;
+  }
+
   .fst {
     font-size: 15px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fss {
     font-size: 15px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsm {
-    font-size: 20px;
-    line-height: 1.0em;
+    font-size: 30px;
     margin-bottom: 1.0em;
   }
 
   .fsl {
     font-size: 50px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsh {
     font-size: 70px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
+  }
+
+  p,li {
+    font-size: $lap-base-font-size;
+    margin-bottom: $lap-base-line-height;
   }
 }
 
 @include media-query(desk){
+  .fst, .fss, .fsm, .fsl, .fsh {
+    line-height: $desk-base-line-height;
+  }
+
   .fst {
     font-size: 15px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fss {
     font-size: 20px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsm {
-    font-size: 30px;
-    line-height: 1.0em;
+    font-size: 40px;
     margin-bottom: 1.0em;
   }
 
   .fsl {
     font-size: 60px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
 
   .fsh {
     font-size: 100px;
-    line-height: 1.0em;
     margin-bottom: 1.0em;
   }
-}
 
-h1, .h1 {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.4em;
-  margin-bottom: 0.25em;
-}
-
-h2, .h2 {
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 1.4em;
-  margin-bottom: 0.333333em;
-}
-
-h3, .h3 {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.4em;
-  margin-bottom: 0.5em;
-}
-
-@include media-query(lap){
-  p,li {
-    font-size: $lap-base-font-size;
-    line-height: $lap-base-line-height;
-    margin-bottom: $lap-base-line-height;
-  }
-
-  h1, .h1 {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.4em;
-    margin-bottom: 0.25em;
-  }
-
-  h2, .h2 {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.4em;
-    margin-bottom: 0.333333em;
-  }
-
-  h3, .h3 {
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 1.4em;
-    margin-bottom: 0.5em;
-  }
-}
-
-@include media-query(desk){
   p,li {
     font-size: $desk-base-font-size;
     line-height: $desk-base-line-height;
     margin-bottom: $desk-base-line-height;
   }
+}
 
-  h1, .h1 {
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 1.4em;
-    margin-bottom: 0.25em;
-  }
+.ffh {
+  font-family: Helvetica, Helmut, Arial, sans-serf;
+}
 
-  h2, .h2 {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.4em;
-    margin-bottom: 0.333333em;
-  }
-
-  h3, .h3 {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 1.4em;
-    margin-bottom: 0.5em;
-  }
+.ffhn {
+  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf;
 }
 
 /******************************************************************
@@ -321,7 +271,9 @@ h3, .h3 {
   .btn { font-size: 20px; }
 }
 
-/* Product Page */
+.navPage {
+  top: 0;
+}
 
 .conditionImg {
   width: 210px !important;
@@ -439,19 +391,36 @@ h3, .h3 {
 
 .settingsPage {
   height: 100%;
-  width: 93%;
   z-index: 1000;
   overflow-y: auto;
   overflow-x: visible;
 }
 
 .settingsClose {
-  right: 20px;
+  right: 22px;
   top: 72px;
+  z-index: 9999;
+}
+
+.settingsControl {
+  cursor: pointer;
+  &:hover {
+    background: $active;
+  }
 }
 
 input {
   border: none;
   outline: none;
-  padding: 60px 0;
+  padding: 60px 5%;
+  width: 90%;
+  font-weight: bold;
+  &::-webkit-input-placeholder { font-weight: bold; }
+  &:-moz-placeholder { font-weight: bold; }
+  &::-moz-placeholder { font-weight: bold; }
+  &:-ms-input-placeholder { font-weight: bold; }
+}
+
+.informationPage {
+  padding-top: 70px;
 }

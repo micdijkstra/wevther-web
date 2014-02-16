@@ -21,19 +21,19 @@ $border-huge:                 13px;
 /* Base Font Size (p, li) */
 $base-color:                  #333;
 $base-font-size:              12px;
-$base-line-height:            1.4em;
-$base-height:                 17px; /* base-font-size * base-line*height */
+$base-line-height:            1.75em;
+$base-height:                 21px; /* base-font-size * base-line*height */
 
 $lap-base-font-size:          14px;
-$lap-base-line-height:        1.4em;
-$lap-base-height:             21px; /* base-font-size * base-line*height */
+$lap-base-line-height:        1.75em;
+$lap-base-height:             26px; /* base-font-size * base-line*height */
 
 $desk-base-font-size:         16px;
-$desk-base-line-height:       1.4em;
-$desk-base-height:            22px; /* base-font-size * base-line*height */
+$desk-base-line-height:       1.75em;
+$desk-base-height:            28px; /* base-font-size * base-line*height */
 
 /* Spacing */
-$tiny-spacing:                2px;
+$tiny-spacing:                1px;
 $small-spacing:               5px; /* half spacing */
 $medium-spacing:              15px; /* full spacing */
 $large-spacing:               30px; /* double spacing */

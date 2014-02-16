@@ -17,7 +17,7 @@
  * Line Height
  */
 
-.veryTight { line-height: 0.5em; }
-.tight { line-height: 1.0em; }
-.loose { line-height: 2.0em; }
-.veryLoose { line-height: 2.5em; }
+.veryTight { line-height: 0.5em !important; }
+.tight { line-height: 1.0em !important; }
+.loose { line-height: 2.0em !important; }
+.veryLoose { line-height: 2.5em !important; }
