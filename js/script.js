@@ -150,6 +150,12 @@ $( document ).ready(function() {
     fadeWeather();
   });
 
+  $('body').on({
+    'touchmove': function(e) {
+      fadeWeather();
+    }
+  });
+
   $('[data-toggle-settings]').click(function() {
     toggleSettings();
     return false;
