@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <div class="page navPage fixed span1of1 front bgBrightT">
+      <div class="page navPage fixed span1of1 front">
         <div class="head">
           <div class="mod mtl mhl mbm">
             <div class="media">
@@ -95,36 +95,50 @@
     <script type="text/x-handlebars" data-template-name="forecast">
       <div class="page forecastPage fixed span1of1 hide">
         <div class="body forecastBody">
-          <div class="row">
-            <div class="col">
-              <div class="mod mrs mbs lap-mhl lap-mvm">
-                <a href="" {{action 'today'}} {{bind-attr class=":fsh :tight :fade :front :mbn isToday:ffhn:light"}}>Today</a>
-              </div>
-            </div>
+          <div class="mod">
+            <div class="row">
+              <div class="col">
+                <div class="mod mvn">
+                  <p>{{view App.TemperatureView temp=forecast_now}}</p>
+                </div>
 
-            <div class="col">
-              <div class="mod mls mbs lap-mhl lap-mvm">
-                <a href="" {{action 'tomorrow'}} {{bind-attr class=":fsh :tight :fade :front :mbn isTomorrow:ffhn:light"}}>Tomorrow</a>
+                <div class="hide">
+                  {{view App.TemperatureView temp=forecast_low description='lo'}}
+                  {{view App.TemperatureView temp=forecast_high description='hi'}}
+                </div>
+              </div>
+              <div class="col">
+                <div class="fluid">
+                  <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg front"></img>
+                </div>
+              </div>
+              <div class="txtR light">
+                <a href="" {{action 'set_temp_c'}} {{bind-attr class=":fss :tight :front :mbn tempIsC:ffhn:light"}}>C&deg;</a>
+                /
+                <a href="" {{action 'set_temp_f'}} {{bind-attr class=":fss :tight :front :mbn tempIsF:ffhn:light"}}>F&deg;</a>
+
+                <a href="" {{action 'set_day_today'}} {{bind-attr class=":mlh :fss :tight :front :mbn dayIsToday:ffhn:light"}}>Today</a>
+                /
+                <a href="" {{action 'set_day_tomorrow'}} {{bind-attr class=":fss :tight :front :mbn dayIsTomorrow:ffhn:light"}}>Tomorrow</a>
+
+                <a href="" {{action 'set_gender_mens'}} {{bind-attr class=":mlh :fss :tight :front :mbn genderIsMens:ffhn:light"}}>Mens</a>
+                /
+                <a href="" {{action 'set_gender_womens'}} {{bind-attr class=":fss :tight :front :mbn genderIsWomens:ffhn:light"}}>Womens</a>
+                /
+                <a href="" {{action 'set_gender_all'}} {{bind-attr class=":fss :tight :front :mbn genderIsAll:ffhn:light"}}>All</a>
+
+                <a href="" class="fss tight mbn front mlh">{{forecast_city}}</a>
+              </div>
               </div>
             </div>
           </div>
 
           <div class="mod lap-mvm lap-mhl">
-            <p class="fsh tight mbn fade front">{{forecast_city}}</p>
-          </div>
-
-          <div class="mod lap-mal">
-            {{view App.TemperatureView temp=forecast_now}}
-            {{view App.TemperatureView temp=forecast_low description='lo'}}
-            {{view App.TemperatureView temp=forecast_high description='hi'}}
           </div>
         </div>
 
         <div class="foot forecastFoot">
-          <div class="mod lap-mal">
-            <div class="fluid">
-              <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg fade front"></img>
-            </div>
+          <div class="mod">
           </div>
         </div>
       </div>
@@ -142,19 +156,13 @@
                 </div>
               {{/each}}
             </div>
-
-            <div class="foot fixed front">
-              <div class="bd txtR">
-                <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="btn btnBlock">Download from the App Store</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </script>
 
    <script type="text/x-handlebars" data-template-name='_product'>
-     <div class="block">
+     <div class="productBlock">
        <a {{bind-attr href=product.url}} target="_blank">
          <div class="mod lap-mal desk-mah">
            <div class="fluid">
@@ -172,7 +180,7 @@
    </script>
 
     <script type="text/x-handlebars" data-template-name="temperature">
-      <a {{bind-attr class=":fsh :col :mrm :mbn :lap-mrl :ffh :fade :front :pointer :modTemp :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
+      <a {{bind-attr class=":fsg :block :mrm :mbn :lap-mrl :ffh :front :pointer :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
     </script>
 
     <script type="text/x-handlebars" data-template-name="information">

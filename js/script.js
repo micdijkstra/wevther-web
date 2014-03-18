@@ -12,9 +12,9 @@ $(function(){
 });
 
 function setupBlocks() {
-  if ($(".block")[0]){
+  if ($(".productBlock")[0]){
     windowWidth = $('.productPage').width();
-    colWidth = $('.block').outerWidth();
+    colWidth = $('.productBlock').outerWidth();
     blocks = [];
     colCount = Math.floor(windowWidth/(colWidth+margin*2));
     for(var i=0;i<colCount;i++){
@@ -25,7 +25,7 @@ function setupBlocks() {
 }
 
 function positionBlocks() {
-  $('.block').each(function(){
+  $('.productBlock').each(function(){
     var min = Array.min(blocks);
     var index = $.inArray(min, blocks);
     var leftPos = margin+(index*(colWidth+margin));
@@ -155,7 +155,7 @@ $( document ).ready(function() {
 
   $('body').on({
     'touchmove': function(e) {
-      fadeWeather();
+      //fadeWeather();
     }
   });
 
