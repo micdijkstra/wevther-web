@@ -143,11 +143,11 @@ function findLocationsWithPosition(position) {
 }
 
 $( document ).ready(function() {
-  setupSettingsPage();
   loadSettings();
 
   $(window).scroll(function(event) {
     fadeWeather();
+    setupBlocks();
   });
 
   $('body').on({
@@ -156,34 +156,35 @@ $( document ).ready(function() {
     }
   });
 
-  $('[data-toggle-settings]').click(function() {
+  $(document).on("click", '[data-toggle-settings]', function() {
+    setupSettingsPage();
     toggleSettings();
     return false;
   });
 
-  $('[data-control-location]').keyup(function() {
+  $(document).on("keyup", '[data-control-location]', function() {
     var query = $(this).val();
     searchLocation(query);
   });
 
-  $('[data-control-location]').focus(function() {
+  $(document).on("focus", '[data-control-location]', function() {
     var query = $(this).val();
     searchLocation(query);
   });
 
-  $('.settingsPage').click(function(e) {
+  $(document).on("click", '.settingsPage', function() {
     $('.modLocations').slideUp();
   });
 
-  $('.modLocation input, .modLocation .locateBtn').click(function(e) {
+  $(document).on("click", '.modLocation input, .modLocation .locateBtn', function() {
     e.stopPropagation();
   });
 
-  $('[data-control-locate]').click(function() {
+  $(document).on("click", '[data-control-locate]', function() {
     findLocation();
   });
 
-  $('[data-control]').click(function() {
+  $(document).on("click", '[data-control]', function() {
     type = $(this).data('control-type');
     value = $(this).data('control-value');
     saveSetting(type, value);
@@ -199,9 +200,5 @@ $( document ).ready(function() {
 
     $('[data-control-location]').val(name);
     $('.modLocations').html('');
-  });
-
-  imagesLoaded($('.productPage')).on('progress', function( instance ) {
-    setupBlocks();
   });
 });

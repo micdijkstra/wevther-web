@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Iconified with a little help from iconifer: http://iconifier.net/ -->
-    <link rel="shortcut icon" href="<%= image_path 'favicon.ico' %>" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="<%= image_path 'apple-touch-icon.png'%>" />
     <link rel="apple-touch-icon" sizes="57x57" href="<%= image_path 'apple-touch-icon-57x57.png' %>" />
     <link rel="apple-touch-icon" sizes="72x72" href="<%= image_path 'apple-touch-icon-72x72.png' %>" />
@@ -119,20 +119,20 @@
           </div>
 
           <div class="mod lap-mvm lap-mhl">
-            <p class="fsh tight mbn fade front">{{view.location}}</p>
+            <p class="fsh tight mbn fade front">{{forecast_city}}</p>
           </div>
 
           <div class="mod lap-mal">
-            {{view App.TemperatureView temp=view.now}}
-            {{view App.TemperatureView temp=view.low description='lo'}}
-            {{view App.TemperatureView temp=view.high description='hi'}}
+            {{view App.TemperatureView temp=forecast_now}}
+            {{view App.TemperatureView temp=forecast_low description='lo'}}
+            {{view App.TemperatureView temp=forecast_high description='hi'}}
           </div>
         </div>
 
         <div class="foot forecastFoot">
           <div class="mod lap-mal">
             <div class="fluid">
-              <img {{bind-attr src=view.icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg fade front"></img>
+              <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg fade front"></img>
             </div>
           </div>
         </div>
@@ -143,8 +143,12 @@
           <div class="body relative">
 
             <div class="modProducts pbh">
-              {{#each product in view.products}}
+              {{#each product in products}}
                 {{partial "product"}}
+              {{else}}
+                <div class="pah">
+                  <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
+                </div>
               {{/each}}
             </div>
 
@@ -158,23 +162,23 @@
       </div>
     </script>
 
-	 <script type="text/x-handlebars" data-template-name='_product'>
-		<div class="block">
-		   <a {{bind-attr href=product.url}} target="_blank">
-		     <div class="mod lap-mal desk-mah">
-		       <div class="fluid">
-		         <div class="meta absolute hide">
-		           <p class="fsl tight">{{product.name}}</p>
-		         </div>
-		         <div class="buy absolute hide">
-		           <img src="img/buy.png" width="100" height="100" alt="Buy">
-		         </div>
-		         <img {{bind-attr src=product.image_url alt=product.name}} class="img"></img>
-		       </div>
-		    </div>
-		  </a>
-		</div>
-	 </script>
+   <script type="text/x-handlebars" data-template-name='_product'>
+     <div class="block">
+       <a {{bind-attr href=product.url}} target="_blank">
+         <div class="mod lap-mal desk-mah">
+           <div class="fluid">
+             <div class="meta absolute hide">
+               <p class="fsl tight">{{product.name}}</p>
+             </div>
+             <div class="buy absolute hide">
+               <img src="img/buy.png" width="100" height="100" alt="Buy">
+             </div>
+             <img {{bind-attr src=product.image_url alt=product.name}} class="img"></img>
+           </div>
+         </div>
+       </a>
+     </div>
+   </script>
 
     <script type="text/x-handlebars" data-template-name="temperature">
       <a {{bind-attr class=":fsh :col :mrm :mbn :lap-mrl :ffh :fade :front :pointer :modTemp :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
@@ -236,6 +240,8 @@
     <script src="js/libs/jquery.cookie.js"></script>
     <script src="js/libs/imagesloaded.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/models/forecast_model.js"></script>
+    <script src="js/models/product_model.js"></script>
     <script src="js/controllers/forecast_controller.js"></script>
     <script src="js/views/forecast_view.js"></script>
     <script src="js/views/temperature_view.js"></script>
