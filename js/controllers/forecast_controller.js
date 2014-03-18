@@ -23,6 +23,7 @@ App.ForecastController = Ember.ObjectController.extend({
 
 
   showForecast: function() {
+    $('.forecastPage, .productPage').fadeIn()
     var forecast = null;
     var unit = null;
     var code = null;
