@@ -1,4 +1,5 @@
 App.ForecastController = Ember.ObjectController.extend({
+  products: [],
   temperature_type: $.cookie('temperature_type'),
   gender_type: $.cookie('gender_type'),
   location_id: $.cookie('location_id'),
@@ -7,13 +8,21 @@ App.ForecastController = Ember.ObjectController.extend({
   isTomorrow: false,
   isUpdated: false,
 
-  reloadForecast: function() {
+  loadForecast: function() {
     temperature_type = $.cookie('temperature_type');
     location_id = $.cookie('location_id');
-    this.set('model', App.Forecast.findAll(temperature_type, location_id));
+    that = this;
+    Ember.$.getJSON('https://wevther-api.herokuapp.com/api/v1/forecast.json?unit=' + temperature_type + '&location_id=' + location_id + '&access_token=e0ijbv02834hv9824hbvn9u4n9482n2&callback=?').then(function(data) {
+      that.set('model', data);
+    });
+  },
+
+  reloadForecast: function() {
+    this.loadForecast();
   }.observes('temperature_type', 'location_id', 'location_name'),
 
-  loadForecast: function() {
+
+  showForecast: function() {
     var forecast = null;
     var unit = null;
     var code = null;
@@ -22,10 +31,6 @@ App.ForecastController = Ember.ObjectController.extend({
     var high = null;
     var icon_url = null;
     var city = null;
-
-    Ember.$.getJSON('https://wevther-api.herokuapp.com/api/v1/forecast.json?unit=' + temperature_type + '&location_id=' + location_id + '&access_token=e0ijbv02834hv9824hbvn9u4n9482n2&callback=?').then(function(data) {
-    data;
-    });
 
     current_forecast = this.get('model');
     city = current_forecast.location.city;
@@ -53,24 +58,23 @@ App.ForecastController = Ember.ObjectController.extend({
     this.set('forecast_code', code);
 
     this.loadProducts();
-  }.observes('isToday'),
+  }.observes('isToday', 'model'),
 
   loadProducts: function() {
     $('.modProducts').hide();
     that = this;
     return Ember.$.getJSON('https://wevther-api.herokuapp.com/api/v1/products.json?weather_code=' + this.get('forecast_code') + '&gender=' + this.get('gender_type') + '&low=' + this.convertToF(this.get('forecast_low')) + '&high=' + this.convertToF(this.get('forecast_high')) + '&access_token=e0ijbv02834hv9824hbvn9u4n9482n2&callback=?').then(function(data) {
       that.set('products', data.products);
-      console.log('show products');
       that.showProducts();
     });
-  },
+  }.observes('gender_type'),
 
   showProducts: function() {
     $('.productPage').imagesLoaded( function() {
       setTimeout(function() {
         $('.modProducts').fadeIn();
         setupBlocks();
-     }, 1000);
+     }, 500);
     });
   },
 
@@ -85,7 +89,7 @@ App.ForecastController = Ember.ObjectController.extend({
   },
 
   convertToF: function(temp) {
-    if (this.unit == 'f') {
+    if (this.get('unit') == 'f') {
       return temp;
     } else {
       var f = temp * 9 / 5 + 32;
@@ -95,7 +99,7 @@ App.ForecastController = Ember.ObjectController.extend({
 
   actions: {
     updateSetting: function (setting, value) {
-      $.cookie(setting, value)
+      $.cookie(setting, value);
       this.set(setting, value);
     },
     today: function () {

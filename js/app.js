@@ -15,14 +15,6 @@ App.ForecastRoute = Ember.Route.extend({
   activate: function() {
     $(document).attr('title', 'Wevther');
     setupBlocks();
-  },
-  model: function() {
-    temperature_type = $.cookie('temperature_type');
-    location_id = $.cookie('location_id');
-    return App.Forecast.findAll(temperature_type, location_id);
-  },
-  products: function() {
-    return [];
   }
 });
 
