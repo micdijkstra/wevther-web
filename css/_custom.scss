@@ -21,8 +21,8 @@ $bright:        #FFFFFF;
 $highlight:     #FA7070;
 $highlightDark: #DB6161;
 
-$active:      #231F20;
-$inactive:        #414042;
+$active:        #231F20;
+$inactive:      #414042;
 
 .light { color: $light }
 .hoverLight:hover { color: $light }
@@ -94,8 +94,8 @@ h3 {
 }
 
 .fst, .fss, .fsm, .fsl, .fsh {
-  line-height: $base-line-height;
-  margin-bottom: 1.0em;
+  line-height: 1.0em;
+  margin-bottom: 0em;
 }
 
 .fst {
@@ -124,33 +124,24 @@ h3 {
 }
 
 @include media-query(lap){
-  .fst, .fss, .fsm, .fsl, .fsh {
-    line-height: $lap-base-line-height;
-  }
-
   .fst {
     font-size: 15px;
-    margin-bottom: 1.0em;
   }
 
   .fss {
     font-size: 15px;
-    margin-bottom: 1.0em;
   }
 
   .fsm {
     font-size: 30px;
-    margin-bottom: 1.0em;
   }
 
   .fsl {
     font-size: 50px;
-    margin-bottom: 1.0em;
   }
 
   .fsh {
     font-size: 70px;
-    margin-bottom: 1.0em;
   }
 
   .fsg {
@@ -221,6 +212,8 @@ h3 {
 
 .bcSuccess { border-color: #f2dede; }
 .bcError { border-color: #f2dede; }
+.bcInactive { border-color: $inactive; }
+.bcLightT { border-color: rgba(255,255,255,0.7); }
 
 /******************************************************************
   Buttons
@@ -370,30 +363,23 @@ h3 {
 @include media-query(lap){
   .productPage {
     padding-top: 153px;
-    width: 768px;
+    width: 100%;
   }
   .productBlock { width: 384px; }
   .productPage .body .foot { right: 20px; }
 }
 
 @include media-query(desk){
-  .productPage {
-    padding-top: 153px;
-    width: 1500px;
-  }
   .productBlock { width: 750px; }
 }
 
-.settingsPage {
-  height: 100%;
-  z-index: 1000;
-  overflow-y: auto;
-  overflow-x: visible;
+.settingsMain {
+  z-index: 9999;
 }
 
 .settingsClose {
-  right: 22px;
-  top: 72px;
+  right: 0px;
+  top: 0;
   z-index: 9999;
 }
 
@@ -407,7 +393,7 @@ h3 {
 input {
   border: none;
   outline: none;
-  padding: 60px 5%;
+  padding: 40px 5%;
   width: 90%;
   font-weight: bold;
   &::-webkit-input-placeholder { font-weight: bold; }
@@ -416,15 +402,31 @@ input {
   &:-ms-input-placeholder { font-weight: bold; }
 }
 
+.modLocations {
+  height: 100%;
+}
+.modLocations, .modLocations > * {
+  z-index: 999999 !important;
+}
 .modLocations > div {
   padding: 40px 5%;
 }
 
 .locateLoader, .locateBtn {
-  right: 30px;
-  top: 120px;
+  right: 185px;
+  top: 45px;
 }
 
 .informationPage {
   padding-top: 70px;
+}
+
+.cityToggle {
+  padding-right: 16px;
+  background: url('../img/arrow_toggle.png') top right no-repeat;
+}
+
+.cityToggleOpen {
+  padding-right: 16px;
+  background: url('../img/arrow_toggle.png') bottom right no-repeat;
 }

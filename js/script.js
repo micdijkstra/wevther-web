@@ -7,7 +7,6 @@ var blocks = [];
 $(function(){
   $(window).resize( function() {
     setupBlocks();
-    setupSettingsPage();
   });
 });
 
@@ -71,14 +70,8 @@ Array.min = function(array) {
 };
 
 function toggleSettings() {
-  $('.settingsPage').fadeToggle();
-  $('.settingsClose').fadeToggle();
-  $('.settingsNav').toggleClass('active');
-  $('body').toggleClass('lockScroll')
-}
-
-function setupSettingsPage() {
-  $('.settingsPage').width($(window).width()-120);
+  $('.settingsBody').slideToggle();
+  $('.cityToggle').toggleClass('cityToggleOpen');
 }
 
 function loadSettings() {
@@ -118,11 +111,11 @@ function loadLocations(locations) {
   $('.modLocations').html('');
   if(locations.length) {
     locations.slice(0,3).forEach( function(loc) {
-      var html = '<div class="bgInactive hoverBgActive pointer mtt" data-control-location-id="' + loc.weather_id + '" data-control-location-name="' + loc.pretty_name + '"><p class="mbn">' + loc.pretty_name + '</p></div>'
+      var html = '<div class="bgDarkT hoverBgActive pointer bbt bcLightT" data-control-location-id="' + loc.weather_id + '" data-control-location-name="' + loc.pretty_name + '"><p class="fsl mbn">' + loc.pretty_name + '</p></div>'
       $('.modLocations').append(html);
     });
   }
-  $(".settingsPage").animate({ scrollTop: $(document).height() }, "slow");
+  $(".settingsBody").animate({ scrollTop: $(document).height() }, "slow");
   $('.modLocations').slideDown();
 }
 
@@ -160,7 +153,6 @@ $( document ).ready(function() {
   });
 
   $(document).on("click", '[data-toggle-settings]', function() {
-    setupSettingsPage();
     toggleSettings();
     return false;
   });
@@ -175,7 +167,7 @@ $( document ).ready(function() {
     searchLocation(query);
   });
 
-  $(document).on("click", '.settingsPage', function() {
+  $(document).on("click", '.modLocations', function() {
     $('.modLocations').slideUp();
   });
 
@@ -203,5 +195,7 @@ $( document ).ready(function() {
 
     $('[data-control-location]').val(name);
     $('.modLocations').html('');
+    $('.modLocations').slideUp();
+    toggleSettings();
   });
 });

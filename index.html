@@ -14,68 +14,6 @@
 
   <body>
     <script type="text/x-handlebars">
-      <a href="" data-toggle-settings class="settingsClose fixed hide front"><img src="img/close.png" width="73" height="73" alt="Close"></a>
-      <div class="page settingsPage fixed bgDarkT bright hide">
-        <div class="main settingsMain">
-          <div class="head">
-            <div class="mod mtl mhl mbm">
-              <div class="media">
-                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
-              </div>
-            </div>
-          </div>
-
-          <div class="mod mth ptl lap-mhl">
-            <p class="bright fss">Temperature in</p>
-            <div class="row">
-              <div class="col span1of2">
-                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='temperature_type' data-control-value='c'>
-                  <p class="mvl">C&deg;</p>
-                </div>
-              </div>
-
-              <div class="col span1of2">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='temperature_type' data-control-value='f'>
-                  <p class="mvl">F&deg;</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mod mth ptl lap-mhl">
-            <p class="bright fss">Show me</p>
-            <div class="row">
-              <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='gender_type' data-control-value='male'>
-                  <p class="mvl">men's</p>
-                </div>
-              </div>
-
-              <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='all'>
-                  <p class="mvl">all</p>
-                </div>
-              </div>
-
-              <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='female'>
-                  <p class="mvl">women's</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mod modLocation mth ptl lap-mhl relative">
-            <p class="bright fss">Weather for</p>
-            <img src="img/locate_button.png" class="locateBtn absolute pointer" data-control-locate>
-            <img src="img/locate_loader.gif" class="locateLoader hide absolute">
-            <input class="bgActive bcActive fss bright fwb mbn" placeholder="Enter city and country" data-control-location>
-            <div class="modLocations">
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="page navPage fixed span1of1 front">
         <div class="head">
           <div class="mod mtl mhl mbm">
@@ -93,68 +31,88 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="forecast">
-      <div class="page forecastPage fixed span1of1 hide">
-        <div class="body forecastBody">
-          <div class="mod">
-            <div class="row">
-              <div class="col">
-                <div class="mod mvn">
-                  <p>{{view App.TemperatureView temp=forecast_now}}</p>
-                </div>
+      <div class="fixed top">
+        <div class="page forecastPage fixed span1of1 relative hide">
 
-                <div class="hide">
-                  {{view App.TemperatureView temp=forecast_low description='lo'}}
-                  {{view App.TemperatureView temp=forecast_high description='hi'}}
-                </div>
+          <div class="body settingsBody bgActive bright span1of1 hide">
+            <div class="main settingsMain">
+              <div class="mod man modLocation row relative">
+                <a href="" data-toggle-settings class="settingsClose absolute front blt bcInactive"><img src="img/close.png" width="140" height="140" alt="Close"></a>
+                <img src="img/locate_button.png" class="locateBtn absolute pointer" data-control-locate>
+                <img src="img/locate_loader.gif" class="locateLoader hide absolute">
+                <input class="bgActive bcActive fsl bright fwb mbn" placeholder="What city?" data-control-location>
               </div>
-              <div class="col">
-                <div class="fluid">
-                  <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg front"></img>
-                </div>
-              </div>
-              <div class="txtR light">
-                <a href="" {{action 'set_temp_c'}} {{bind-attr class=":fss :tight :front :mbn tempIsC:ffhn:light"}}>C&deg;</a>
-                /
-                <a href="" {{action 'set_temp_f'}} {{bind-attr class=":fss :tight :front :mbn tempIsF:ffhn:light"}}>F&deg;</a>
-
-                <a href="" {{action 'set_day_today'}} {{bind-attr class=":mlh :fss :tight :front :mbn dayIsToday:ffhn:light"}}>Today</a>
-                /
-                <a href="" {{action 'set_day_tomorrow'}} {{bind-attr class=":fss :tight :front :mbn dayIsTomorrow:ffhn:light"}}>Tomorrow</a>
-
-                <a href="" {{action 'set_gender_mens'}} {{bind-attr class=":mlh :fss :tight :front :mbn genderIsMens:ffhn:light"}}>Mens</a>
-                /
-                <a href="" {{action 'set_gender_womens'}} {{bind-attr class=":fss :tight :front :mbn genderIsWomens:ffhn:light"}}>Womens</a>
-                /
-                <a href="" {{action 'set_gender_all'}} {{bind-attr class=":fss :tight :front :mbn genderIsAll:ffhn:light"}}>All</a>
-
-                <a href="" class="fss tight mbn front mlh">{{forecast_city}}</a>
-              </div>
+              <div class="modLocations fixed span1of1">
               </div>
             </div>
           </div>
 
-          <div class="mod lap-mvm lap-mhl">
-          </div>
-        </div>
+          <div class="body forecastBody">
+            <div class="mod">
+              <div class="absolute row">
+                <div class="col">
+                  <div class="mod mvn">
+                    <p>{{view App.TemperatureView temp=forecast_now}}</p>
+                  </div>
 
-        <div class="foot forecastFoot">
-          <div class="mod">
-          </div>
-        </div>
-      </div>
-
-      <div class="page productPage hide">
-        <div class="mod">
-          <div class="body relative">
-
-            <div class="modProducts pbh">
-              {{#each product in products}}
-                {{partial "product"}}
-              {{else}}
-                <div class="pah">
-                  <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
+                  <div class="hide">
+                    {{view App.TemperatureView temp=forecast_low description='lo'}}
+                    {{view App.TemperatureView temp=forecast_high description='hi'}}
+                  </div>
                 </div>
-              {{/each}}
+
+                <div class="col">
+                  <div class="fluid">
+                    <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg"></img>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="txtR light">
+                  <a href="" {{action 'set_temp_c'}} {{bind-attr class=":fss :tight :front :mbn tempIsC:ffhn:light"}}>C&deg;</a>
+                  /
+                  <a href="" {{action 'set_temp_f'}} {{bind-attr class=":fss :tight :front :mbn tempIsF:ffhn:light"}}>F&deg;</a>
+
+                  <a href="" {{action 'set_day_today'}} {{bind-attr class=":mlh :fss :tight :front :mbn dayIsToday:ffhn:light"}}>Today</a>
+                  /
+                  <a href="" {{action 'set_day_tomorrow'}} {{bind-attr class=":fss :tight :front :mbn dayIsTomorrow:ffhn:light"}}>Tomorrow</a>
+
+                  <a href="" {{action 'set_gender_mens'}} {{bind-attr class=":mlh :fss :tight :front :mbn genderIsMens:ffhn:light"}}>Mens</a>
+                  /
+                  <a href="" {{action 'set_gender_womens'}} {{bind-attr class=":fss :tight :front :mbn genderIsWomens:ffhn:light"}}>Womens</a>
+                  /
+                  <a href="" {{action 'set_gender_all'}} {{bind-attr class=":fss :tight :front :mbn genderIsAll:ffhn:light"}}>All</a>
+
+                  <a href="" class="fss tight mbn front mlh cityToggle" data-toggle-settings>{{forecast_city}}</a>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mod lap-mvm lap-mhl">
+            </div>
+          </div>
+
+          <div class="foot forecastFoot">
+            <div class="mod">
+            </div>
+          </div>
+        </div>
+
+        <div class="page productPage relative back hide">
+          <div class="mod">
+            <div class="body relative">
+
+              <div class="modProducts pbh">
+                {{#each product in products}}
+                  {{partial "product"}}
+                {{else}}
+                  <div class="pah">
+                    <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
+                  </div>
+                {{/each}}
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +138,7 @@
    </script>
 
     <script type="text/x-handlebars" data-template-name="temperature">
-      <a {{bind-attr class=":fsg :block :mrm :mbn :lap-mrl :ffh :front :pointer :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
+      <a {{bind-attr class=":fsg :block :mrm :mbn :lap-mrl :ffh :pointer :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
     </script>
 
     <script type="text/x-handlebars" data-template-name="information">
