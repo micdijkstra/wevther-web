@@ -81,7 +81,8 @@ App.ForecastController = Ember.ObjectController.extend({
       setTimeout(function() {
         $('.modProducts').fadeIn();
         setupBlocks();
-     }, 500);
+        setupBlocks();
+     }, 1000);
     });
   },
 

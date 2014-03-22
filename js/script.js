@@ -28,6 +28,12 @@ function positionBlocks() {
     var min = Array.min(blocks);
     var index = $.inArray(min, blocks);
     var leftPos = margin+(index*(colWidth+margin));
+    var paddingTop = $(this).css('padding-top');
+    var paddingLeft = $(this).css('padding-left');
+    var paddingRight = $(this).css('padding-right');
+    if (paddingTop == '0px') { $(this).css('padding-top', Math.floor((Math.random()*50)+50)+'px') }
+    if (paddingRight == '0px') { $(this).css('padding-left', Math.floor((Math.random()*50)+50)+'px') }
+    if (paddingRight == '0px') { $(this).css('padding-right', Math.floor((Math.random()*50)+50)+'px') }
     $(this).css({
       'left':leftPos+'px',
       'top':min+'px',
@@ -35,6 +41,12 @@ function positionBlocks() {
     });
     var height = height = min+$(this).outerHeight()+margin;
     blocks[index] = height;
+    $('.productFooter').css({
+      'left': 0,
+      'top':height+'px',
+      'width': $('.modProducts').width(),
+      'z-index':'-1'
+    });
   });
 }
 
@@ -69,6 +81,13 @@ Array.min = function(array) {
     return Math.min.apply(Math, array);
 };
 
+function toggleInformation() {
+  $('.informationPage').fadeToggle();
+  $('.cityToggle').toggleClass('cityToggleOpen');
+  $('body').toggleClass('lockScroll');
+  $('#nav').toggleClass('hide');
+}
+
 function toggleSettings() {
   $('.settingsBody').slideToggle();
   $('.cityToggle').toggleClass('cityToggleOpen');
@@ -84,8 +103,6 @@ function loadSettings() {
 
   $("[data-control-type='temperature_type'][data-control-value='" + temperature_type  + "']").addClass('bgActive dull');
   $("[data-control-type='gender_type'][data-control-value='" + gender_type + "']").addClass('bgActive dull');
-
-  $("[data-control-location]").val(location_name);
 }
 
 function saveSetting(setting, value) {
@@ -138,18 +155,18 @@ function findLocationsWithPosition(position) {
   });
 }
 
-$( document ).ready(function() {
+$(document).ready(function() {
   loadSettings();
-
-  $(window).scroll(function(event) {
-    fadeWeather();
-    setupBlocks();
-  });
 
   $('body').on({
     'touchmove': function(e) {
       //fadeWeather();
     }
+  });
+
+  $(document).on("click", '[data-toggle-information]', function() {
+    toggleInformation();
+    return false;
   });
 
   $(document).on("click", '[data-toggle-settings]', function() {
