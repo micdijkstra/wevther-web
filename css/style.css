@@ -1572,36 +1572,14 @@ body {
   font-weight: 700;
   line-height: 1.0em; }
 
-p, li {
-  font-size: 12px;
-  line-height: 1.75em;
-  margin-bottom: 1.75em; }
+.ffh {
+  font-family: Helvetica, Helmut, Arial, sans-serf; }
 
-h3 {
+.ffhn {
+  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf; }
+
+.fwb {
   font-weight: bold; }
-
-.fst, .fss, .fsm, .fsl, .fsh {
-  line-height: 1.0em;
-  margin-bottom: 0em; }
-
-.fst {
-  font-size: 10px; }
-
-.fss {
-  font-size: 10px; }
-
-.fsm {
-  font-size: 15px; }
-
-.fsl {
-  font-size: 20px; }
-
-.fsh {
-  font-size: 30px; }
-
-.fsg {
-  font-size: 60px;
-  line-height: 60px; }
 
 .loose {
   line-height: 1.5em !important; }
@@ -1609,63 +1587,42 @@ h3 {
 .veryLoose {
   line-height: 1.75em !important; }
 
+body {
+  font-size: 12px;
+  line-height: 1.75em;
+  margin-bottom: 1.75em; }
+
+p, li, .fst, .fss, .fsm, .fsl, .fsh {
+  line-height: 1.0em;
+  margin-bottom: 0em; }
+
+.fst {
+  font-size: 1.0em; }
+
+.fss {
+  font-size: 1.0em; }
+
+.fsm {
+  font-size: 2.0em; }
+
+.fsl {
+  font-size: 3.333333333em; }
+
+.fsh {
+  font-size: 4.666666667em; }
+
+.fsg {
+  font-size: 12em;
+  line-height: 0.666666667em; }
+
 @media only screen and (min-width: 768px) {
-  .fst {
-    font-size: 15px; }
-
-  .fss {
-    font-size: 15px; }
-
-  .fsm {
-    font-size: 30px; }
-
-  .fsl {
-    font-size: 50px; }
-
-  .fsh {
-    font-size: 70px; }
-
-  .fsg {
-    font-size: 180px;
-    line-height: 120px; }
-
-  p, li {
-    font-size: 14px;
+  body {
+    font-size: 15px;
     margin-bottom: 1.75em; } }
 @media only screen and (min-width: 1500px) {
-  .fst, .fss, .fsm, .fsl, .fsh {
-    line-height: 1.75em; }
-
-  .fst {
-    font-size: 15px;
-    margin-bottom: 1.0em; }
-
-  .fss {
-    font-size: 20px;
-    margin-bottom: 1.0em; }
-
-  .fsm {
-    font-size: 40px;
-    margin-bottom: 1.0em; }
-
-  .fsl {
-    font-size: 60px;
-    margin-bottom: 1.0em; }
-
-  .fsh {
-    font-size: 100px;
-    margin-bottom: 1.0em; }
-
-  p, li {
+  body {
     font-size: 16px;
-    line-height: 1.75em;
     margin-bottom: 1.75em; } }
-.ffh {
-  font-family: Helvetica, Helmut, Arial, sans-serf; }
-
-.ffhn {
-  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf; }
-
 /******************************************************************
   Colors
 ******************************************************************/
@@ -1757,16 +1714,17 @@ h3 {
   width: 224px !important; }
 
 .productPage {
-  width: 320px;
+  width: 100%;
   padding-top: 123px;
   margin: 0; }
 
 .productBlock {
+  margin: 0 auto !important;
   position: absolute;
   width: 260px; }
   .productBlock .meta {
     width: 100px;
-    margin: 30px 0px 0 180px; }
+    margin: 30px 0px 0 140px; }
   .productBlock .buy {
     bottom: 0;
     margin: 0px 0 15px -15px; }
@@ -1775,9 +1733,6 @@ h3 {
       width: 50px; }
 
 @media only screen and (min-width: 768px) {
-  .productPage {
-    width: 100%; }
-
   .productBlock {
     width: 384px; }
     .productBlock .meta {

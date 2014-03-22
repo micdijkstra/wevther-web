@@ -44,8 +44,8 @@
             </div>
           </div>
 
-          <div class="body forecastBody ptm">
-            <div class="absolute row ptl">
+          <div class="body forecastBody">
+            <div class="absolute row ptl forecastInformation hide">
               <div class="col">
                 <div class="mod">
                   <p>{{view App.TemperatureView temp=forecast_now}}</p>
@@ -67,7 +67,7 @@
             <div class="row">
               <div class="colRight">
                 <div class="mod">
-                  <a href="" class="fss tight mbn front mlh cityToggle" data-toggle-settings>{{forecast_city}}</a>
+                  <a href="" class="fss tight mbn front mlh mrm cityToggle" data-toggle-settings>{{forecast_city}}</a>
                 </div>
               </div>
 
@@ -121,18 +121,23 @@
                 {{#each product in products}}
                   {{partial "product"}}
                 {{else}}
-                  <div class="pah">
-                    <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
-                  </div>
-                {{/each}}
-
-                <div class="absolute productFooter">
-                  <div class="mod">
-                    <div class="txtC">
+                  <div class="absolute pth mth lap-span1of2">
+                    <div class="mth pth">
+                      <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
                       <p class="pvh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
                     </div>
                   </div>
-                </div>
+                {{/each}}
+
+                {{#if products}}
+                  <div class="productFooter">
+                    <div class="mod">
+                      <div class="txtC">
+                        <p class="pvh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
+                      </div>
+                    </div>
+                  </div>
+                {{/if}}
               </div>
             </div>
           </div>
@@ -181,7 +186,7 @@
           <div class="pah bright">
             <div class="mod lap-mth lap-mhh lap-pth lap-phh">
               <div class="bd ffh fwb">
-                <h3 class="fss loose">Team</h3>
+                <h3 class="fwb fss loose">Team</h3>
                 <p class="fss loose"><a href="http://jacobheftmann.com/" class="bright tdu">Jacob</a> is an independent designer based in New York City and his backpack.</p>
                 <p class="fss loose"><a href="http://jack.ly/" class="bright tdu">Jack</a> is tall, half-Canadian, and, as of recent, a New Yorker.</p>
                 <p class="fss loose"><a href="http://dijkstra.io" class="bright tdu">Michael</a> lives by the beach in Australia so he doesn't need weather reports.</p>
@@ -190,7 +195,7 @@
 
             <div class="mod lap-mth lap-mhh lap-pth lap-phh">
               <div class="bd ffh fwb">
-                <h3 class="fss loose">Credit</h3>
+                <h3 class="fwb fss loose">Credit</h3>
                 <p class="fss loose">Thanks to our contributors for their good taste: Eiko and Courtney.</p>
                 <p class="fss loose">Credit to the team at Svpply for their early support. The original app sourced products from there, hence some of the visual references.</p>
               </div>
@@ -198,7 +203,7 @@
 
             <div class="mod lap-mth lap-mhh lap-pth lap-phh">
               <div class="bd ffh fwb">
-                <h3 class="fss loose">Contact</h3>
+                <h3 class="fwb fss loose">Contact</h3>
                 <p class="fss loose"><a href="http://twitter.com/wevther" target="_blank" class="bright">@wevther</a></p>
                 <p class="fss loose"><a href="mailto:forecast@wevther.com" class="bright">forecast@wevther.com</a></p>
               </div>

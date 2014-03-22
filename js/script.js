@@ -4,12 +4,6 @@ var margin = 0;
 var windowWidth = 0;
 var blocks = [];
 
-$(function(){
-  $(window).resize( function() {
-    setupBlocks();
-  });
-});
-
 function setupBlocks() {
   if ($(".productBlock")[0]){
     windowWidth = $('.productPage').width();
@@ -38,10 +32,15 @@ function positionBlocks() {
     } else {
       var paddingFactor = 50;
     }
-    if (paddingTop == '0px') { $(this).css('padding-top', Math.floor((Math.random()*paddingFactor)+50)+'px') }
-    if (paddingRight == '0px') { $(this).css('padding-left', Math.floor((Math.random()*paddingFactor)+50)+'px') }
-    if (paddingRight == '0px') { $(this).css('padding-right', Math.floor((Math.random()*paddingFactor)+50)+'px') }
+
+    if ($(window).width() <= 480) {
+      $(this).css('padding', '10px 30px')
+    } else {
+      var padding = Math.floor((Math.random()*paddingFactor)+50)+'px';
+      if (paddingTop == '0px') { $(this).css('padding', padding) }
+    }
     $(this).css({
+      'position': 'absolute',
       'left':leftPos+'px',
       'top':min+'px',
       'z-index':'-1'
@@ -49,6 +48,7 @@ function positionBlocks() {
     var height = height = min+$(this).outerHeight()+margin;
     blocks[index] = height;
     $('.productFooter').css({
+      'position': 'absolute',
       'left': 0,
       'top':height+'px',
       'width': $('.modProducts').width(),
@@ -90,7 +90,6 @@ Array.min = function(array) {
 
 function toggleInformation() {
   $('.informationPage').fadeToggle();
-  $('.cityToggle').toggleClass('cityToggleOpen');
   $('body').toggleClass('lockScroll');
   $('#nav').toggleClass('hide');
 }

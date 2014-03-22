@@ -69,6 +69,7 @@ App.ForecastController = Ember.ObjectController.extend({
 
   loadProducts: function() {
     $('.modProducts').hide();
+    $('.forecastInformation').hide();
     $('.modProductsLoading').show();
     that = this;
     return Ember.$.getJSON('https://wevther-api.herokuapp.com/api/v1/products.json?weather_code=' + this.get('forecast_code') + '&gender=' + this.get('gender_type') + '&low=' + this.convertToF(this.get('forecast_low')) + '&high=' + this.convertToF(this.get('forecast_high')) + '&access_token=e0ijbv02834hv9824hbvn9u4n9482n2&callback=?').then(function(data) {
@@ -82,6 +83,7 @@ App.ForecastController = Ember.ObjectController.extend({
       setTimeout(function() {
         $('.modProductsLoading').hide();
         $('.modProducts').fadeIn();
+        $('.forecastInformation').fadeIn();
         setupBlocks();
         setupBlocks();
      }, 3000);

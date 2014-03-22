@@ -83,44 +83,16 @@ body {
   line-height: 1.0em;
 }
 
-p,li {
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  margin-bottom: $base-line-height;
+.ffh {
+  font-family: Helvetica, Helmut, Arial, sans-serf;
 }
 
-h3 {
+.ffhn {
+  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf;
+}
+
+.fwb {
   font-weight: bold;
-}
-
-.fst, .fss, .fsm, .fsl, .fsh {
-  line-height: 1.0em;
-  margin-bottom: 0em;
-}
-
-.fst {
-  font-size: 10px;
-}
-
-.fss {
-  font-size: 10px;
-}
-
-.fsm {
-  font-size: 15px;
-}
-
-.fsl {
-  font-size: 20px;
-}
-
-.fsh {
-  font-size: 30px;
-}
-
-.fsg {
-  font-size: 60px;
-  line-height: 60px;
 }
 
 .loose {
@@ -131,81 +103,54 @@ h3 {
   line-height: 1.75em !important;
 }
 
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin-bottom: $base-line-height;
+}
+
+p, li, .fst, .fss, .fsm, .fsl, .fsh {
+  line-height: 1.0em;
+  margin-bottom: 0em;
+}
+
+.fst {
+  font-size: 1.0em;
+}
+
+.fss {
+  font-size: 1.0em;
+}
+
+.fsm {
+  font-size: 2.0em;
+}
+
+.fsl {
+  font-size: 3.333333333em;
+}
+
+.fsh {
+  font-size: 4.666666667em;
+}
+
+.fsg {
+  font-size: 12em;
+  line-height: 0.666666667em;
+}
+
 @include media-query(lap){
-  .fst {
-    font-size: 15px;
-  }
-
-  .fss {
-    font-size: 15px;
-  }
-
-  .fsm {
-    font-size: 30px;
-  }
-
-  .fsl {
-    font-size: 50px;
-  }
-
-  .fsh {
-    font-size: 70px;
-  }
-
-  .fsg {
-    font-size: 180px;
-    line-height: 120px;
-  }
-
-  p,li {
+  body {
     font-size: $lap-base-font-size;
     margin-bottom: $lap-base-line-height;
   }
 }
 
 @include media-query(desk){
-  .fst, .fss, .fsm, .fsl, .fsh {
-    line-height: $desk-base-line-height;
-  }
-
-  .fst {
-    font-size: 15px;
-    margin-bottom: 1.0em;
-  }
-
-  .fss {
-    font-size: 20px;
-    margin-bottom: 1.0em;
-  }
-
-  .fsm {
-    font-size: 40px;
-    margin-bottom: 1.0em;
-  }
-
-  .fsl {
-    font-size: 60px;
-    margin-bottom: 1.0em;
-  }
-
-  .fsh {
-    font-size: 100px;
-    margin-bottom: 1.0em;
-  }
-
-  p,li {
+  body {
     font-size: $desk-base-font-size;
-    line-height: $desk-base-line-height;
     margin-bottom: $desk-base-line-height;
   }
-}
-
-.ffh {
-  font-family: Helvetica, Helmut, Arial, sans-serf;
-}
-
-.ffhn {
-  font-family: 'Helvetica Neue', Helvetica, Helmut, Arial, sans-serf;
 }
 
 /******************************************************************
@@ -293,18 +238,19 @@ h3 {
 }
 
 .productPage {
-  width: 320px;
+  width: 100%;
   padding-top: 123px;
   margin: 0;
 }
 
 .productBlock {
+  margin: 0 auto !important;
   position: absolute;
   width: 260px;
 
   .meta {
     width: 100px;
-    margin: 30px 0px 0 180px;
+    margin: 30px 0px 0 140px;
   }
 
   .buy {
@@ -319,9 +265,6 @@ h3 {
 }
 
 @include media-query(lap){
-  .productPage {
-    width: 100%;
-  }
   .productBlock {
     width: 384px;
     .meta {
