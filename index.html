@@ -111,7 +111,13 @@
           <div class="mod">
             <div class="body relative">
 
-              <div class="modProducts pbh">
+              <div class="modProductsLoading pth mth">
+                <div class="bd txtC">
+                  <img src="img/loader.gif" alt="Loading Wevther …">
+                </div>
+              </div>
+
+              <div class="modProducts pbh hide">
                 {{#each product in products}}
                   {{partial "product"}}
                 {{else}}
@@ -153,7 +159,7 @@
    </script>
 
     <script type="text/x-handlebars" data-template-name="temperature">
-      <a {{bind-attr class=":fsg :block :mrm :mbn :lap-mrl :ffh :pointer :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
+      <span {{bind-attr class=":fsg :block :mrm :mbn :lap-mrl :ffh view.description:light"}}>{{view.temp}}&deg;</span>
     </script>
 
     <div class="page fixed informationPage hide">

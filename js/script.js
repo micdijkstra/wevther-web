@@ -31,9 +31,16 @@ function positionBlocks() {
     var paddingTop = $(this).css('padding-top');
     var paddingLeft = $(this).css('padding-left');
     var paddingRight = $(this).css('padding-right');
-    if (paddingTop == '0px') { $(this).css('padding-top', Math.floor((Math.random()*50)+50)+'px') }
-    if (paddingRight == '0px') { $(this).css('padding-left', Math.floor((Math.random()*50)+50)+'px') }
-    if (paddingRight == '0px') { $(this).css('padding-right', Math.floor((Math.random()*50)+50)+'px') }
+    if ($(window).width() > 1500) {
+      var paddingFactor = 150;
+    } else if ($(window).width() > 768) {
+      var paddingFactor = 100;
+    } else {
+      var paddingFactor = 50;
+    }
+    if (paddingTop == '0px') { $(this).css('padding-top', Math.floor((Math.random()*paddingFactor)+50)+'px') }
+    if (paddingRight == '0px') { $(this).css('padding-left', Math.floor((Math.random()*paddingFactor)+50)+'px') }
+    if (paddingRight == '0px') { $(this).css('padding-right', Math.floor((Math.random()*paddingFactor)+50)+'px') }
     $(this).css({
       'left':leftPos+'px',
       'top':min+'px',

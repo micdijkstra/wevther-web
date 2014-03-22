@@ -319,38 +319,20 @@ h3 {
 }
 
 @include media-query(lap){
-  .productBlock{
+  .productPage {
+    width: 100%;
+  }
+  .productBlock {
+    width: 384px;
     .meta {
-      width: 240px;
-      margin: 40px 0px 0 140px;
+      width: 280px;
+      margin: 60px 0px 0 280px;
       overflow: hidden;
     }
 
     .buy {
       bottom: 0;
-      margin: 0px 0 25px -25px;
-
-      img {
-        height: 75px;
-        width: 75px;
-      }
-    }
-    &:first-of-type > .mod  {
-      margin-top: 0 !important;
-    }
-  }
-}
-
-@include media-query(desk){
-  .productBlock{
-    .meta {
-      width: 320px;
-      margin: 60px 0px 0 320px;
-    }
-
-    .buy {
-      bottom: 0;
-      margin: 0px 0 -30px -30px;
+      margin: 0px 0 30px -30px;
 
       img {
         height: 100px;
@@ -370,15 +352,6 @@ h3 {
 }
 
 @include media-query(lap){
-  .productPage {
-    width: 100%;
-  }
-  .productBlock { width: 384px; }
-  .productPage .body .foot { right: 20px; }
-}
-
-@include media-query(desk){
-  .productBlock { width: 750px; }
 }
 
 .settingsMain {
@@ -429,11 +402,7 @@ input {
   top: 0;
   height: 100%;
   z-index: 1000 !important;
-  overflow-y: scroll;
-}
-
-.informationBody {
-  overflow-y: scroll !important;
+  overflow-y: auto;
 }
 
 .informationPage::before

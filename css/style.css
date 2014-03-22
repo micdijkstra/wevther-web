@@ -1775,45 +1775,26 @@ h3 {
       width: 50px; }
 
 @media only screen and (min-width: 768px) {
-  .productBlock .meta {
-    width: 240px;
-    margin: 40px 0px 0 140px;
-    overflow: hidden; }
-  .productBlock .buy {
-    bottom: 0;
-    margin: 0px 0 25px -25px; }
-    .productBlock .buy img {
-      height: 75px;
-      width: 75px; }
-  .productBlock:first-of-type > .mod {
-    margin-top: 0 !important; } }
-@media only screen and (min-width: 1500px) {
-  .productBlock .meta {
-    width: 320px;
-    margin: 60px 0px 0 320px; }
-  .productBlock .buy {
-    bottom: 0;
-    margin: 0px 0 -30px -30px; }
-    .productBlock .buy img {
-      height: 100px;
-      width: 100px; } }
-.productBlock:hover .meta {
-  display: block; }
-.productBlock:hover .buy {
-  display: block; }
-
-@media only screen and (min-width: 768px) {
   .productPage {
     width: 100%; }
 
   .productBlock {
     width: 384px; }
+    .productBlock .meta {
+      width: 280px;
+      margin: 60px 0px 0 280px;
+      overflow: hidden; }
+    .productBlock .buy {
+      bottom: 0;
+      margin: 0px 0 30px -30px; }
+      .productBlock .buy img {
+        height: 100px;
+        width: 100px; } }
+.productBlock:hover .meta {
+  display: block; }
+.productBlock:hover .buy {
+  display: block; }
 
-  .productPage .body .foot {
-    right: 20px; } }
-@media only screen and (min-width: 1500px) {
-  .productBlock {
-    width: 750px; } }
 .settingsMain {
   z-index: 9999; }
 
@@ -1859,10 +1840,7 @@ input {
   top: 0;
   height: 100%;
   z-index: 1000 !important;
-  overflow-y: scroll; }
-
-.informationBody {
-  overflow-y: scroll !important; }
+  overflow-y: auto; }
 
 .informationPage::before {
   bottom: 0px;
