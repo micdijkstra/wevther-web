@@ -13,7 +13,7 @@ App.Router.map(function() {
 
 App.ForecastRoute = Ember.Route.extend({
   activate: function() {
-    $(document).attr('title', 'Wevther');
+    $(document).attr('title', 'WEΛTHER');
     setupBlocks();
   }
 });

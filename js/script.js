@@ -31,14 +31,11 @@ function positionBlocks() {
     var paddingTop = $(this).css('padding-top');
     var paddingLeft = $(this).css('padding-left');
     var paddingRight = $(this).css('padding-right');
-    if ($(window).width() > 1500) {
-      var paddingFactor = 150;
-      var paddingOffset = 50;
-    } else if ($(window).width() > 1024) {
-      var paddingFactor = 100;
+    if ($(window).width() > 1150) {
+      var paddingFactor = 50;
       var paddingOffset = 50;
     } else {
-      var paddingFactor = 50;
+      var paddingFactor = 30;
       var paddingOffset = 10;
     }
 
@@ -259,12 +256,4 @@ $(document).ready(function() {
     $('.modLocations').slideUp();
     toggleSettings();
   });
-
-  $("input[type=text], textarea").on({ 'touchstart' : function() {
-      zoomDisable();
-  }});
-
-  $("input[type=text], textarea").on({ 'touchend' : function() {
-      setTimeout(zoomEnable, 500);
-  }});
 });

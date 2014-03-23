@@ -157,6 +157,5 @@ App.ForecastController = Ember.ObjectController.extend({
   loadiPhonePromo: function() {
     $('#nav a').hide();
     $('#promo').fadeIn();
-    $(".modScreenshots").animate({ scrollLeft: '170px' }, "fast");
   },
 });
