@@ -109,7 +109,7 @@ function toggleSettings() {
 function toggleMobileSettings() {
   $('.mobileSettingsClose').fadeToggle();
   $('.mobileSettingsPage').fadeToggle();
-  $('body').toggleClass('lockScroll');
+  $('#nav').toggleClass('hide');
   $('.modLocations').html('');
 }
 
@@ -195,6 +195,12 @@ $(document).ready(function() {
   });
 
   $(document).on("click", '[data-toggle-information]', function() {
+    toggleInformation();
+    return false;
+  });
+
+  $(document).on("click", '[data-toggle-mobile-information]', function() {
+    toggleMobileSettings();
     toggleInformation();
     return false;
   });

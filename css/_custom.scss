@@ -296,7 +296,7 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   .productBlock {
     width: 384px;
     .meta {
-      width: 280px;
+      width: 240px;
       margin: 60px 0px 0 280px;
       overflow: hidden;
     }
@@ -322,17 +322,32 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   }
 }
 
-@include media-query(lap){
-}
-
 .settingsMain {
   z-index: 9999;
 }
 
 .settingsClose {
-  right: 0px;
+  right: 0;
   top: 0;
   z-index: 9999;
+
+  img {
+    height: 73px;
+    width: 73px;
+  }
+}
+
+@include media-query(lap){
+  .settingsClose {
+    right: 0px;
+    top: 0;
+    z-index: 9999;
+
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
 }
 
 .settingsControl {
