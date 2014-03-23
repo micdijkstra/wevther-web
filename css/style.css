@@ -1741,7 +1741,6 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 .btn {
   position: relative;
   overflow: visible;
-  display: inline-block;
   padding: 30px 15px;
   border: none;
   margin: 0;
@@ -1783,7 +1782,12 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   border: 0; }
 
 .btnBlock {
-  width: 250px; }
+  display: block;
+  width: 250px;
+  margin: 0 auto; }
+
+.modScreenshots {
+  overflow-x: auto; }
 
 @media only screen and (min-width: 640px) {
   .btnBlock {
@@ -1805,6 +1809,9 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   width: 100%;
   padding-top: 123px;
   margin: 0; }
+
+.modProductsLoading {
+  margin-top: -123px; }
 
 .productBlock {
   margin: 0 auto !important;
@@ -1867,7 +1874,7 @@ input {
     font-weight: bold; }
 
 .mobileSettingsPage {
-  height: 100%;
+  min-height: 100%;
   overflow-y: auto; }
 
 .modLocations {
@@ -1877,16 +1884,23 @@ input {
   z-index: 100 !important; }
 
 .modLocations > div {
-  padding: 40px 5%; }
+  padding: 10px 5%; }
 
+@media only screen and (min-width: 640px) {
+  .modLocations > div {
+    padding: 40px 5%; } }
 .locateLoader, .locateBtn {
+  height: 20px;
   right: 10px;
-  top: 70px; }
+  top: 55px;
+  width: 20px; }
 
 @media only screen and (min-width: 640px) {
   .locateLoader, .locateBtn {
+    height: 48px;
     right: 185px;
-    top: 45px; } }
+    top: 45px;
+    width: 48px; } }
 .informationPage {
   top: 0;
   height: 100%;

@@ -188,7 +188,6 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 .btn {
   position: relative;
   overflow: visible;
-  display: inline-block;
   padding: 30px 15px;
   border: none;
   margin: 0;
@@ -233,7 +232,13 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 }
 
 .btnBlock {
-  width: 250px
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.modScreenshots {
+  overflow-x: auto;
 }
 
 @include media-query(lap){
@@ -260,6 +265,10 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   width: 100%;
   padding-top: 123px;
   margin: 0;
+}
+
+.modProductsLoading {
+  margin-top: -123px;
 }
 
 .productBlock {
@@ -346,7 +355,7 @@ input {
 }
 
 .mobileSettingsPage {
-  height: 100%;
+  min-height: 100%;
   overflow-y: auto;
 }
 
@@ -357,18 +366,28 @@ input {
   z-index: 100 !important;
 }
 .modLocations > div {
-  padding: 40px 5%;
+  padding: 10px 5%;
+}
+
+@include media-query(lap){
+  .modLocations > div {
+    padding: 40px 5%;
+  }
 }
 
 .locateLoader, .locateBtn {
+  height: 20px;
   right: 10px;
-  top: 70px;
+  top: 55px;
+  width: 20px;
 }
 
 @include media-query(lap){
   .locateLoader, .locateBtn {
+    height: 48px;
     right: 185px;
     top: 45px;
+    width: 48px;
   }
 }
 

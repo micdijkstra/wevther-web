@@ -40,7 +40,7 @@ function positionBlocks() {
     }
 
     if ($(window).width() <= 480) {
-      $(this).css('padding', '10px 30px')
+      $(this).css('padding', '5px 12px')
     } else {
       var padding = Math.floor((Math.random()*paddingFactor)+50)+'px';
       if (paddingTop == '0px') { $(this).css('padding', padding) }
@@ -143,7 +143,6 @@ function searchLocation(query) {
 function loadLocations(locations) {
   $('.locateBtn').show();
   $('.locateLoader').hide();
-  $(".mobileSettingsPage").animate({ scrollTop: $(document).height() }, "slow");
 
   $('.modLocations').slideDown();
   $('.modLocations').html('');
@@ -174,6 +173,16 @@ function findLocationsWithPosition(position) {
   $.getJSON( "https://wevther-api.herokuapp.com/api/v1/locations.json?access_token=e0ijbv02834hv9824hbvn9u4n9482n2&lat=" + position.coords.latitude + "&lng=" + position.coords.longitude + '&callback=?', function( data ) {
     loadLocations(data.locations);
   });
+}
+
+function zoomDisable(){
+  $('head meta[name=viewport]').remove();
+  $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />');
+}
+
+function zoomEnable(){
+  $('head meta[name=viewport]').remove();
+  $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />');
 }
 
 $(document).ready(function() {
@@ -241,4 +250,12 @@ $(document).ready(function() {
     $('.modLocations').slideUp();
     toggleSettings();
   });
+
+  $("input[type=text], textarea").on({ 'touchstart' : function() {
+      zoomDisable();
+  }});
+
+  $("input[type=text], textarea").on({ 'touchend' : function() {
+      setTimeout(zoomEnable, 500);
+  }});
 });

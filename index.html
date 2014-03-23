@@ -5,7 +5,7 @@
     <meta name="title" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" />
@@ -19,57 +19,57 @@
         <div class="main settingsMain">
           <div class="head">
             <div class="mod mtl mhl mbm">
-              <div class="media">
-                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+              <div class="media ptt">
+                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="150" alt="Wevther" class="mts img">{{/link-to}}
               </div>
             </div>
           </div>
 
-          <div class="mod mth ptl lap-mhl">
-            <p class="bright fss mbm">Temperature in</p>
+          <div class="mod">
+            <p class="bright fss mbm ptm">Temperature in</p>
             <div class="row">
               <div class="col span1of2">
-                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='temperature_type' data-control-value='c'>
-                  <p class="mvl">C&deg;</p>
+                <div class="pvm txtC bgInactive bright settingsControl" data-control data-control-type='temperature_type' data-control-value='c'>
+                  <p class="mvs">C&deg;</p>
                 </div>
               </div>
 
               <div class="col span1of2">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='temperature_type' data-control-value='f'>
-                  <p class="mvl">F&deg;</p>
+                <div class="pvm txtC bgInactive bright settingsControl mlt" data-control data-control-type='temperature_type' data-control-value='f'>
+                  <p class="mvs">F&deg;</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="mod mth ptl lap-mhl">
-            <p class="bright fss mbm">Show me</p>
+          <div class="mod">
+            <p class="bright fss mbm ptm">Show me</p>
             <div class="row">
               <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='gender_type' data-control-value='male'>
-                  <p class="mvl">men's</p>
+                <div class="pvm txtC bgInactive bright settingsControl" data-control data-control-type='gender_type' data-control-value='male'>
+                  <p class="mvs">men's</p>
                 </div>
               </div>
 
               <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='all'>
-                  <p class="mvl">all</p>
+                <div class="pvm txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='all'>
+                  <p class="mvs">all</p>
                 </div>
               </div>
 
               <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='female'>
-                  <p class="mvl">women's</p>
+                <div class="pvm txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='female'>
+                  <p class="mvs">women's</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="mod modLocation mth ptl lap-mhl relative">
-            <p class="bright fss mbm">Weather for</p>
+          <div class="mod modLocation relative">
+            <p class="bright fss mbm ptm">Weather for</p>
             <img src="img/locate_button.png" class="locateBtn absolute pointer" data-control-locate>
             <img src="img/locate_loader.gif" class="locateLoader hide absolute">
-            <input class="bgActive bcActive fss bright fwb mbn" placeholder="What city?" data-control-location>
+            <input class="bgActive bcActive fss bright fwb mbn pvm" placeholder="What city?" data-control-location>
             <div class="modLocations">
             </div>
           </div>
@@ -77,12 +77,34 @@
       </div>
 
       <div id="nav" class="page navPage fixed span1of1 front">
-        <div class="mod mhl">
-          <div class="media">
+        <div class="mod mls mbs lap-mbm lap-mhl">
+          <div class="media txtC">
             {{#link-to 'forecast' class='hide lap-block'}}<img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
             <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="fst mbn mlh hide lap-block imgExt highlight">Download for iOS</a>
             <a href="" class="fst mbn mlh hide lap-block imgExt" data-toggle-information>Information</a>
             <a href="" class="imgExt lap-hide" data-toggle-mobile-settings><img src="img/settings.png" width="20" height="20" alt="Settings"></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="promo" class="hide">
+        <div class="mod mhn mth">
+          <div class="hd txtC">
+            {{#link-to 'forecast'}}<img src="img/logo.png" width="193" height="19" alt="Wevther">{{/link-to}}
+          </div>
+
+          <div class="bd txtC">
+            <div class="modScreenshots ptm">
+              <img src="img/screenshots.jpg" height="270" alt="Wevther for iPhone">
+            </div>
+          </div>
+        </div>
+
+        <div class="page navPage fixed span1of1 front">
+          <div class="mod mhl">
+            <div class="media txtC">
+              <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="btn btnBlock hide">Download from the App Store</a>
+            </div>
           </div>
         </div>
       </div>
@@ -175,7 +197,7 @@
           <div class="mod">
             <div class="body relative">
 
-              <div class="modProductsLoading pth mth">
+              <div class="modProductsLoading lap-pth lap-mth">
                 <div class="bd txtC">
                   <img src="img/loader.gif" alt="Loading Wevther …">
                 </div>
@@ -185,9 +207,9 @@
                 {{#each product in products}}
                   {{partial "product"}}
                 {{else}}
-                  <div class="absolute pth mth lap-span1of2">
-                    <div class="mth pth">
-                      <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
+                  <div class="absolute lap-pth lap-mth desk-span1of2">
+                    <div class="mod lap-mth lap-pth">
+                      <p class="fsl lap-pth">No suggestions yet. We're adding stuff as fast as we can!</p>
                       <p class="pvh mbh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
                     </div>
                   </div>

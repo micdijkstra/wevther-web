@@ -152,5 +152,11 @@ App.ForecastController = Ember.ObjectController.extend({
     set_temp_f: function () {
       this.setTemp('f');
     }
-  }
+  },
+
+  loadiPhonePromo: function() {
+    $('#nav a').hide();
+    $('#promo').fadeIn();
+    $(".modScreenshots").animate({ scrollLeft: '170px' }, "fast");
+  },
 });

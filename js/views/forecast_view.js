@@ -1,6 +1,10 @@
 App.ForecastView = Ember.View.extend({
   templateName: 'forecast',
   didInsertElement: function() {
-    this.controller.loadForecast();
+    if ((navigator.userAgent.match(/iPhone/i))) {
+      this.controller.loadiPhonePromo();
+    } else {
+      this.controller.loadForecast();
+    }
   }
 });
