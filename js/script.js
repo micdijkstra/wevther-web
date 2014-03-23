@@ -33,16 +33,19 @@ function positionBlocks() {
     var paddingRight = $(this).css('padding-right');
     if ($(window).width() > 1500) {
       var paddingFactor = 150;
-    } else if ($(window).width() > 768) {
+      var paddingOffset = 50;
+    } else if ($(window).width() > 1024) {
       var paddingFactor = 100;
+      var paddingOffset = 50;
     } else {
       var paddingFactor = 50;
+      var paddingOffset = 10;
     }
 
     if ($(window).width() <= 480) {
       $(this).css('padding', '5px 12px')
     } else {
-      var padding = Math.floor((Math.random()*paddingFactor)+50)+'px';
+      var padding = Math.floor((Math.random()*paddingFactor)+paddingOffset)+'px';
       if (paddingTop == '0px') { $(this).css('padding', padding) }
     }
     $(this).css({

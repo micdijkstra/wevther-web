@@ -294,6 +294,16 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 
 @include media-query(lap){
   .productBlock {
+    .meta {
+      width: 240px;
+      margin: 30px 0px 0 80px;
+      overflow: hidden;
+    }
+  }
+}
+
+@include media-query(desk){
+  .productBlock {
     width: 384px;
     .meta {
       width: 240px;
