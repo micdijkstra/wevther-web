@@ -109,6 +109,7 @@ function toggleSettings() {
 function toggleMobileSettings() {
   $('.mobileSettingsClose').fadeToggle();
   $('.mobileSettingsPage').fadeToggle();
+  $('body').toggleClass('lockScroll');
   $('.modLocations').html('');
 }
 
