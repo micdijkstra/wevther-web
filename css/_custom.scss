@@ -280,6 +280,13 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   width: 260px;
 
   .meta {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    text-transform: lowercase;
     width: 100px;
     margin: 30px 0px 0 140px;
   }
@@ -455,13 +462,4 @@ input {
 .cityToggleOpen {
   padding-right: 16px;
   background: url('../img/arrow_toggle.png') bottom right no-repeat;
-}
-
-.hyphenate {
-  -ms-word-break: break-all;
-  word-break: break-all;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
 }
