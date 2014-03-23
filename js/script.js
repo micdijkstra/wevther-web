@@ -4,6 +4,12 @@ var margin = 0;
 var windowWidth = 0;
 var blocks = [];
 
+$(function(){
+  $(window).resize( function() {
+    setupBlocks();
+  });
+});
+
 function setupBlocks() {
   if ($(".productBlock")[0]){
     windowWidth = $('.productPage').width();
@@ -97,6 +103,13 @@ function toggleInformation() {
 function toggleSettings() {
   $('.settingsBody').slideToggle();
   $('.cityToggle').toggleClass('cityToggleOpen');
+  $('.modLocations').html('');
+}
+
+function toggleMobileSettings() {
+  $('.mobileSettingsClose').fadeToggle();
+  $('.mobileSettingsPage').fadeToggle();
+  $('.modLocations').html('');
 }
 
 function loadSettings() {
@@ -129,6 +142,7 @@ function searchLocation(query) {
 function loadLocations(locations) {
   $('.locateBtn').show();
   $('.locateLoader').hide();
+  $(".mobileSettingsPage").animate({ scrollTop: $(document).height() }, "slow");
 
   $('.modLocations').slideDown();
   $('.modLocations').html('');
@@ -177,6 +191,11 @@ $(document).ready(function() {
 
   $(document).on("click", '[data-toggle-settings]', function() {
     toggleSettings();
+    return false;
+  });
+
+  $(document).on("click", '[data-toggle-mobile-settings]', function() {
+    toggleMobileSettings();
     return false;
   });
 

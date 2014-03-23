@@ -126,7 +126,7 @@ body {
 
 .ie .page {
   /* Fixes for IE6-8 http://jonikorpi.com/leaving-old-IE-behind */
-  width: 768px;
+  width: 640px;
   margin: 0 auto; }
 
 /**
@@ -293,7 +293,7 @@ body {
   _position: relative;
   width: auto; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   .lap-row, .lap-lastCol {
     overflow: hidden;
     *overflow: visible;
@@ -449,7 +449,7 @@ body {
     _margin-right: -3px;
     _position: relative;
     width: auto; } }
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1150px) {
   .desk-row, .desk-lastCol {
     overflow: hidden;
     *overflow: visible;
@@ -788,7 +788,7 @@ body {
   display: inline-block; }
 
 /* Lap */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   .lap-block {
     display: block; }
 
@@ -801,7 +801,7 @@ body {
   .lap-inlineBlock {
     display: inline-block; } }
 /* Desk */
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1150px) {
   .desk-block {
     display: block; }
 
@@ -982,6 +982,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   * @package    Helper
   * @subpackage Position
 **/
+/* Palm */
 .absolute {
   position: absolute; }
 
@@ -1000,6 +1001,80 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 .back {
   z-index: -999; }
 
+.top {
+  top: 0; }
+
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+/* Lap */
+@media only screen and (min-width: 640px) {
+  .lap-absolute {
+    position: absolute; }
+
+  .lap-fixed {
+    position: fixed; }
+
+  .lap-relative {
+    position: relative; }
+
+  .lap-static {
+    position: static; }
+
+  .lap-front {
+    z-index: 999; }
+
+  .lap-back {
+    z-index: -999; }
+
+  .lap-top {
+    top: 0; }
+
+  .lap-bottom {
+    bottom: 0; }
+
+  .lap-left {
+    left: 0; }
+
+  .lap-right {
+    right: 0; } }
+/* Desk */
+@media only screen and (min-width: 1150px) {
+  .desk-absolute {
+    position: absolute; }
+
+  .desk-fixed {
+    position: fixed; }
+
+  .desk-relative {
+    position: relative; }
+
+  .desk-static {
+    position: static; }
+
+  .desk-front {
+    z-index: 999; }
+
+  .desk-back {
+    z-index: -999; }
+
+  .desk-top {
+    top: 0; }
+
+  .desk-bottom {
+    bottom: 0; }
+
+  .desk-left {
+    left: 0; }
+
+  .desk-right {
+    right: 0; } }
 /**
   * Space
   *
@@ -1158,7 +1233,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   margin-left: 30px !important; }
 
 /* Lap */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   .lap-ptn, .lap-pvn, .lap-pan {
     padding-top: 0px !important; }
 
@@ -1303,7 +1378,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
   .lap-mlh, .lap-mhh, .lap-mah {
     margin-left: 30px !important; } }
 /* Desk */
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1150px) {
   .desk-ptn, .desk-pvn, .desk-pan {
     padding-top: 0px !important; }
 
@@ -1603,23 +1678,33 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   font-size: 1.0em; }
 
 .fsm {
-  font-size: 2.0em; }
+  font-size: 1.5em; }
 
 .fsl {
-  font-size: 3.333333333em; }
+  font-size: 1.5em; }
 
 .fsh {
   font-size: 4.666666667em; }
 
 .fsg {
-  font-size: 12em;
+  font-size: 8.166666667em;
   line-height: 0.666666667em; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   body {
     font-size: 15px;
-    margin-bottom: 1.75em; } }
-@media only screen and (min-width: 1500px) {
+    margin-bottom: 1.75em; }
+
+  .fsm {
+    font-size: 2.0em; }
+
+  .fsl {
+    font-size: 3.333333333em; }
+
+  .fsg {
+    font-size: 12em;
+    line-height: 0.666666667em; } }
+@media only screen and (min-width: 1150px) {
   body {
     font-size: 16px;
     margin-bottom: 1.75em; } }
@@ -1700,7 +1785,7 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 .btnBlock {
   width: 250px; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   .btnBlock {
     width: 386px; }
 
@@ -1711,8 +1796,11 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   z-index: 10000 !important; }
 
 .conditionImg {
-  width: 224px !important; }
+  width: 120px !important; }
 
+@media only screen and (min-width: 640px) {
+  .conditionImg {
+    width: 224px !important; } }
 .productPage {
   width: 100%;
   padding-top: 123px;
@@ -1732,7 +1820,7 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
       height: 50px;
       width: 50px; }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
   .productBlock {
     width: 384px; }
     .productBlock .meta {
@@ -1778,6 +1866,10 @@ input {
   input:-ms-input-placeholder {
     font-weight: bold; }
 
+.mobileSettingsPage {
+  height: 100%;
+  overflow-y: auto; }
+
 .modLocations {
   height: 100%; }
 
@@ -1788,9 +1880,13 @@ input {
   padding: 40px 5%; }
 
 .locateLoader, .locateBtn {
-  right: 185px;
-  top: 45px; }
+  right: 10px;
+  top: 70px; }
 
+@media only screen and (min-width: 640px) {
+  .locateLoader, .locateBtn {
+    right: 185px;
+    top: 45px; } }
 .informationPage {
   top: 0;
   height: 100%;

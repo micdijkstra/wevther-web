@@ -14,12 +14,75 @@
 
   <body>
     <script type="text/x-handlebars">
+      <a href="" data-toggle-mobile-settings class="settingsClose mobileSettingsClose hide fixed front"><img src="img/close.png" width="73" height="73" alt="Close"></a>
+      <div class="page mobileSettingsPage hide front fixed bgDarkT bright">
+        <div class="main settingsMain">
+          <div class="head">
+            <div class="mod mtl mhl mbm">
+              <div class="media">
+                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+              </div>
+            </div>
+          </div>
+
+          <div class="mod mth ptl lap-mhl">
+            <p class="bright fss mbm">Temperature in</p>
+            <div class="row">
+              <div class="col span1of2">
+                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='temperature_type' data-control-value='c'>
+                  <p class="mvl">C&deg;</p>
+                </div>
+              </div>
+
+              <div class="col span1of2">
+                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='temperature_type' data-control-value='f'>
+                  <p class="mvl">F&deg;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mod mth ptl lap-mhl">
+            <p class="bright fss mbm">Show me</p>
+            <div class="row">
+              <div class="col span1of3">
+                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='gender_type' data-control-value='male'>
+                  <p class="mvl">men's</p>
+                </div>
+              </div>
+
+              <div class="col span1of3">
+                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='all'>
+                  <p class="mvl">all</p>
+                </div>
+              </div>
+
+              <div class="col span1of3">
+                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='female'>
+                  <p class="mvl">women's</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mod modLocation mth ptl lap-mhl relative">
+            <p class="bright fss mbm">Weather for</p>
+            <img src="img/locate_button.png" class="locateBtn absolute pointer" data-control-locate>
+            <img src="img/locate_loader.gif" class="locateLoader hide absolute">
+            <input class="bgActive bcActive fss bright fwb mbn" placeholder="What city?" data-control-location>
+            <div class="modLocations">
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div id="nav" class="page navPage fixed span1of1 front">
         <div class="mod mhl">
           <div class="media">
-            {{#link-to 'forecast'}}<img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
-            <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="fst mbn mlh lap-block imgExt highlight">Download for iOS</a>
-            <a href="" class="fst mbn mlh lap-block imgExt" data-toggle-information>Information</a>
+            {{#link-to 'forecast' class='hide lap-block'}}<img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+            <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="fst mbn mlh hide lap-block imgExt highlight">Download for iOS</a>
+            <a href="" class="fst mbn mlh hide lap-block imgExt" data-toggle-information>Information</a>
+            <a href="" class="imgExt lap-hide" data-toggle-mobile-settings><img src="img/settings.png" width="40" height="40" alt="Settings"></a>
           </div>
         </div>
       </div>
@@ -32,7 +95,7 @@
         <div class="page forecastPage fixed span1of1 relative hide">
 
           <div class="body settingsBody bgActive bright span1of1 hide">
-            <div class="main settingsMain">
+            <div class="main settingsMain hide lap-block">
               <div class="mod man modLocation row relative">
                 <a href="" data-toggle-settings class="settingsClose absolute front blt bcInactive"><img src="img/close.png" width="140" height="140" alt="Close"></a>
                 <img src="img/locate_button.png" class="locateBtn absolute pointer" data-control-locate>
@@ -44,27 +107,8 @@
             </div>
           </div>
 
-          <div class="body forecastBody">
-            <div class="absolute row ptl forecastInformation hide">
-              <div class="col">
-                <div class="mod">
-                  <p>{{view App.TemperatureView temp=forecast_now}}</p>
-                </div>
-
-                <div class="hide">
-                  {{view App.TemperatureView temp=forecast_low description='lo'}}
-                  {{view App.TemperatureView temp=forecast_high description='hi'}}
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="fluid">
-                  <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg"></img>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
+          <div class="body forecastBody relative">
+            <div class="row hide lap-block">
               <div class="colRight">
                 <div class="mod">
                   <a href="" class="fss tight mbn front mlh mrm cityToggle" data-toggle-settings>{{forecast_city}}</a>
@@ -97,6 +141,26 @@
                 </div>
               </div>
             </div>
+
+            <div class="row ptl desk-absolute desk-top forecastInformation hide">
+              <div class="col">
+                <div class="mod">
+                  <p>{{view App.TemperatureView temp=forecast_now}}</p>
+                </div>
+
+                <div class="hide">
+                  {{view App.TemperatureView temp=forecast_low description='lo'}}
+                  {{view App.TemperatureView temp=forecast_high description='hi'}}
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="fluid">
+                  <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg"></img>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="foot forecastFoot">
@@ -124,7 +188,7 @@
                   <div class="absolute pth mth lap-span1of2">
                     <div class="mth pth">
                       <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
-                      <p class="pvh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
+                      <p class="pvh mbh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
                     </div>
                   </div>
                 {{/each}}
@@ -132,8 +196,8 @@
                 {{#if products}}
                   <div class="productFooter">
                     <div class="mod">
-                      <div class="txtC">
-                        <p class="pvh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
+                      <div class="txtC pbh lap-pbn">
+                        <p class="pvh mbh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
                       </div>
                     </div>
                   </div>

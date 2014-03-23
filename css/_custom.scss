@@ -123,11 +123,11 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 }
 
 .fsm {
-  font-size: 2.0em;
+  font-size: 1.5em;
 }
 
 .fsl {
-  font-size: 3.333333333em;
+  font-size: 1.5em;
 }
 
 .fsh {
@@ -135,7 +135,7 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 }
 
 .fsg {
-  font-size: 12em;
+  font-size: 8.166666667em;
   line-height: 0.666666667em;
 }
 
@@ -143,6 +143,19 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   body {
     font-size: $lap-base-font-size;
     margin-bottom: $lap-base-line-height;
+  }
+
+  .fsm {
+    font-size: 2.0em;
+  }
+
+  .fsl {
+    font-size: 3.333333333em;
+  }
+
+  .fsg {
+    font-size: 12em;
+    line-height: 0.666666667em;
   }
 }
 
@@ -234,7 +247,13 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 }
 
 .conditionImg {
-  width: 224px !important;
+  width: 120px !important;
+}
+
+@include media-query(lap){
+  .conditionImg {
+    width: 224px !important;
+  }
 }
 
 .productPage {
@@ -326,6 +345,11 @@ input {
   &:-ms-input-placeholder { font-weight: bold; }
 }
 
+.mobileSettingsPage {
+  height: 100%;
+  overflow-y: auto;
+}
+
 .modLocations {
   height: 100%;
 }
@@ -337,8 +361,15 @@ input {
 }
 
 .locateLoader, .locateBtn {
-  right: 185px;
-  top: 45px;
+  right: 10px;
+  top: 70px;
+}
+
+@include media-query(lap){
+  .locateLoader, .locateBtn {
+    right: 185px;
+    top: 45px;
+  }
 }
 
 .informationPage {
