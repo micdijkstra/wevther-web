@@ -1811,7 +1811,10 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
   margin: 0; }
 
 .modProductsLoading {
-  margin-top: -123px; }
+  top: 50%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -140px; }
 
 .productBlock {
   margin: 0 auto !important;

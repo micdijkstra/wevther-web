@@ -268,7 +268,10 @@ p, li, .fst, .fss, .fsm, .fsl, .fsh {
 }
 
 .modProductsLoading {
-  margin-top: -123px;
+  top: 50%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -140px;
 }
 
 .productBlock {
