@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
-    <meta name="title" content="" />
+    <title>Wevther</title>
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css" />
@@ -14,76 +13,104 @@
 
   <body>
     <script type="text/x-handlebars">
-      <a href="" data-toggle-settings class="settingsClose fixed hide front"><img src="img/close.png" width="73" height="73" alt="Close"></a>
-      <div class="page settingsPage fixed bgDarkT bright hide">
+      <a href="" data-toggle-mobile-settings class="settingsClose mobileSettingsClose hide fixed front"><img src="img/close.png" width="73" height="73" alt="Close"></a>
+      <div class="page mobileSettingsPage hide front fixed bgDarkT bright">
         <div class="main settingsMain">
           <div class="head">
             <div class="mod mtl mhl mbm">
-              <div class="media">
-                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+              <div class="media ptt">
+                {{#link-to 'forecast'}}<img src="img/logo_white.png" width="150" alt="Wevther" class="mts img">{{/link-to}}
               </div>
             </div>
           </div>
 
-          <div class="mod mth ptl lap-mhl">
-            <p class="bright fss">Temperature in</p>
+          <div class="mod">
+            <p class="bright fss mbm ptm">Temperature in</p>
             <div class="row">
               <div class="col span1of2">
-                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='temperature_type' data-control-value='c'>
-                  <p class="mvl">C&deg;</p>
+                <div class="pvm txtC bgInactive bright settingsControl" data-control data-control-type='temperature_type' data-control-value='c'>
+                  <p class="mvs">C&deg;</p>
                 </div>
               </div>
 
               <div class="col span1of2">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='temperature_type' data-control-value='f'>
-                  <p class="mvl">F&deg;</p>
+                <div class="pvm txtC bgInactive bright settingsControl mlt" data-control data-control-type='temperature_type' data-control-value='f'>
+                  <p class="mvs">F&deg;</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="mod mth ptl lap-mhl">
-            <p class="bright fss">Show me</p>
+          <div class="mod">
+            <p class="bright fss mbm ptm">Show me</p>
             <div class="row">
               <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl" data-control data-control-type='gender_type' data-control-value='male'>
-                  <p class="mvl">men's</p>
+                <div class="pvm txtC bgInactive bright settingsControl" data-control data-control-type='gender_type' data-control-value='male'>
+                  <p class="mvs">men's</p>
                 </div>
               </div>
 
               <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='all'>
-                  <p class="mvl">all</p>
+                <div class="pvm txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='all'>
+                  <p class="mvs">all</p>
                 </div>
               </div>
 
               <div class="col span1of3">
-                <div class="pvl txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='female'>
-                  <p class="mvl">women's</p>
+                <div class="pvm txtC bgInactive bright settingsControl mlt" data-control data-control-type='gender_type' data-control-value='female'>
+                  <p class="mvs">women's</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="mod modLocation mth ptl lap-mhl relative">
-            <p class="bright fss">Weather for</p>
-            <img src="img/locate_button.png" class="locateBtn absolute pointer" data-control-locate>
-            <img src="img/locate_loader.gif" class="locateLoader hide absolute">
-            <input class="bgActive bcActive fss bright fwb mbn" placeholder="Enter city and country" data-control-location>
+          <div class="mod modLocation relative">
+            <p class="bright fss mbm ptm">Weather for</p>
+            <img src="img/locate_button.png" alt="Use Current Location" class="locateBtn absolute pointer" data-control-locate>
+            <img src="img/locate_loader.gif" alt="Loading Location" class="locateLoader hide absolute">
+            <input class="bgActive bcActive fss bright fwb mbn pvm" placeholder="What city?" data-control-location>
             <div class="modLocations">
+            </div>
+          </div>
+        </div>
+
+        <div class="page navPage fixed span1of1 front">
+          <div class="mod mhl">
+            <div class="media">
+              <a href="" class="fst mbn mlh imgExt light" data-toggle-mobile-information>Information</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="page navPage fixed span1of1 front bgBrightT">
-        <div class="head">
-          <div class="mod mtl mhl mbm">
-            <div class="media">
-              {{#link-to 'forecast'}}<img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
-              <a href="" class="fst hide lap-block imgExt settingsNav" data-toggle-settings>Settings</a>
-              <a href="http://blog.wevther.com" target="_blank" class="fst hide mhh lap-block imgExt blogNav">Blog</a>
-              {{#link-to 'information' classNames='fst hide mlh lap-block imgExt informationNav'}}Information{{/link-to}}
+      <div id="nav" class="page navPage fixed span1of1 front">
+        <div class="mod mls mbs lap-mbm lap-mhl">
+          <div class="media txtC">
+            {{#link-to 'forecast' class='hide lap-block'}}<img src="img/logo.png" width="193" height="19" alt="Wevther" class="img">{{/link-to}}
+            <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="fst mbn mlh hide lap-block imgExt highlight">Download for iOS</a>
+            <a href="" class="fst mbn mlh hide lap-block imgExt" data-toggle-information>Information</a>
+            <a href="" class="imgExt lap-hide" data-toggle-mobile-settings><img src="img/settings.png" width="20" height="20" alt="Settings"></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="promo" class="hide">
+        <div class="mod mhn mth">
+          <div class="hd txtC">
+            {{#link-to 'forecast'}}<img src="img/logo.png" width="193" height="19" alt="Wevther">{{/link-to}}
+          </div>
+
+          <div class="bd txtC">
+            <div class="modScreenshots ptm">
+              <img src="img/screenshots.jpg" height="270" alt="Wevther for iPhone">
+            </div>
+          </div>
+        </div>
+
+        <div class="page navPage fixed span1of1 front">
+          <div class="mod mhl">
+            <div class="media txtC">
+              <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="btn btnBlock hide">Download from the App Store</a>
             </div>
           </div>
         </div>
@@ -93,59 +120,117 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="forecast">
-      <div class="page forecastPage fixed span1of1 hide">
-        <div class="body forecastBody">
-          <div class="row">
-            <div class="col">
-              <div class="mod mrs mbs lap-mhl lap-mvm">
-                <a href="" {{action 'today'}} {{bind-attr class=":fsh :tight :fade :front :mbn isToday:ffhn:light"}}>Today</a>
+      <div class="fixed top">
+        <div class="page forecastPage fixed span1of1 relative hide">
+
+          <div class="body settingsBody bgActive bright span1of1 hide">
+            <div class="main settingsMain hide lap-block">
+              <div class="mod man modLocation row relative">
+                <a href="" data-toggle-settings class="settingsClose absolute front blt bcInactive"><img src="img/close.png" width="140" height="140" alt="Close"></a>
+                <img src="img/locate_button.png" alt="Use Current Location" class="locateBtn absolute pointer" data-control-locate>
+                <img src="img/locate_loader.gif" alt="Loading Location" class="locateLoader hide absolute">
+                <input class="bgActive bcActive fsl bright fwb mbn" placeholder="What city?" data-control-location>
+              </div>
+              <div class="modLocations fixed span1of1">
+              </div>
+            </div>
+          </div>
+
+          <div class="body forecastBody relative">
+            <div class="row hide lap-block">
+              <div class="colRight">
+                <div class="mod">
+                  <a href="" class="fss tight mbn front mlh mrm cityToggle" data-toggle-settings>{{forecast_city}}</a>
+                </div>
+              </div>
+
+              <div class="colRight">
+                <div class="mod">
+                  <a href="" {{action 'set_gender_mens'}} {{bind-attr class=":mlh :fss :tight :front :mbn genderIsMens:ffhn:light"}}>Mens</a>
+                  /
+                  <a href="" {{action 'set_gender_womens'}} {{bind-attr class=":fss :tight :front :mbn genderIsWomens:ffhn:light"}}>Womens</a>
+                  /
+                  <a href="" {{action 'set_gender_all'}} {{bind-attr class=":fss :tight :front :mbn genderIsAll:ffhn:light"}}>All</a>
+                </div>
+              </div>
+
+              <div class="colRight">
+                <div class="mod">
+                  <a href="" {{action 'set_day_today'}} {{bind-attr class=":mlh :fss :tight :front :mbn dayIsToday:ffhn:light"}}>Today</a>
+                  /
+                  <a href="" {{action 'set_day_tomorrow'}} {{bind-attr class=":fss :tight :front :mbn dayIsTomorrow:ffhn:light"}}>Tomorrow</a>
+                </div>
+              </div>
+
+              <div class="colRight">
+                <div class="mod">
+                  <a href="" {{action 'set_temp_c'}} {{bind-attr class=":fss :tight :front :mbn tempIsC:ffhn:light"}}>C&deg;</a>
+                  /
+                  <a href="" {{action 'set_temp_f'}} {{bind-attr class=":fss :tight :front :mbn tempIsF:ffhn:light"}}>F&deg;</a>
+                </div>
               </div>
             </div>
 
-            <div class="col">
-              <div class="mod mls mbs lap-mhl lap-mvm">
-                <a href="" {{action 'tomorrow'}} {{bind-attr class=":fsh :tight :fade :front :mbn isTomorrow:ffhn:light"}}>Tomorrow</a>
+            <div class="row ptl desk-absolute desk-top forecastInformation hide">
+              <div class="col">
+                <div class="mod">
+                  <p>{{view App.TemperatureView temp=forecast_now}}</p>
+                </div>
+
+                <div class="hide">
+                  {{view App.TemperatureView temp=forecast_low description='lo'}}
+                  {{view App.TemperatureView temp=forecast_high description='hi'}}
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="fluid">
+                  <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg"></img>
+                </div>
               </div>
             </div>
+
           </div>
 
-          <div class="mod lap-mvm lap-mhl">
-            <p class="fsh tight mbn fade front">{{forecast_city}}</p>
-          </div>
-
-          <div class="mod lap-mal">
-            {{view App.TemperatureView temp=forecast_now}}
-            {{view App.TemperatureView temp=forecast_low description='lo'}}
-            {{view App.TemperatureView temp=forecast_high description='hi'}}
-          </div>
-        </div>
-
-        <div class="foot forecastFoot">
-          <div class="mod lap-mal">
-            <div class="fluid">
-              <img {{bind-attr src=forecast_icon_url}} width="281" height="188" alt="Condition text" class="img conditionImg fade front"></img>
+          <div class="foot forecastFoot">
+            <div class="mod">
             </div>
           </div>
         </div>
       </div>
 
-      <div class="page productPage hide">
-        <div class="mod">
-          <div class="body relative">
+      <div class="relative back">
+        <div class="page productPage hide">
+          <div class="mod">
+            <div class="body relative">
 
-            <div class="modProducts pbh">
-              {{#each product in products}}
-                {{partial "product"}}
-              {{else}}
-                <div class="pah">
-                  <p class="fsl">No suggestions yet. We're adding stuff as fast as we can!</p>
+              <div class="modProductsLoading lap-pth lap-mth">
+                <div class="bd txtC">
+                  <img src="img/loader.gif" alt="Loading Wevther …">
                 </div>
-              {{/each}}
-            </div>
+              </div>
 
-            <div class="foot fixed front">
-              <div class="bd txtR">
-                <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="btn btnBlock">Download from the App Store</a>
+              <div class="modProducts pbh hide">
+                {{#each product in products}}
+                  {{partial "product"}}
+                {{else}}
+                  <div class="absolute lap-pth lap-mth desk-span1of2">
+                    <div class="mod lap-mth lap-pth">
+                      <p class="fsl lap-pth">No suggestions yet. We're adding stuff as fast as we can!</p>
+                      <p class="pvh mbh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
+                    </div>
+                  </div>
+                {{/each}}
+
+                {{#if products}}
+                  <div class="productFooter">
+                    <div class="mod">
+                      <div class="txtC pbh lap-pbn">
+                        <p class="pvh mbh">Have a product suggestion? <a href="mailto:forecast@wevther.com" class="highlight">Tell us</a></p>
+                      </div>
+                    </div>
+                  </div>
+                {{/if}}
               </div>
             </div>
           </div>
@@ -154,12 +239,12 @@
     </script>
 
    <script type="text/x-handlebars" data-template-name='_product'>
-     <div class="block">
-       <a {{bind-attr href=product.url}} target="_blank">
+     <div class="productBlock">
+       <a {{bind-attr href=product.url}} target="_blank" class="dark productImage">
          <div class="mod lap-mal desk-mah">
            <div class="fluid">
              <div class="meta absolute hide">
-               <p class="fsl tight">{{product.name}}</p>
+               <p class="fsl tight dark hyphenate">{{product.name}}</p>
              </div>
              <div class="buy absolute hide">
                <img src="img/buy.png" width="100" height="100" alt="Buy">
@@ -172,58 +257,71 @@
    </script>
 
     <script type="text/x-handlebars" data-template-name="temperature">
-      <a {{bind-attr class=":fsh :col :mrm :mbn :lap-mrl :ffh :fade :front :pointer :modTemp :hoverLight view.description:light"}}>{{view.temp}}&deg;</a>
+      <span {{bind-attr class=":fsg :block :mrm :mbn :lap-mrl :ffh view.description:light"}}>{{view.temp}}&deg;</span>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="information">
-      <div class="page informationPage">
-        <div class="span10of12">
-          <div class="mod lap-mal desk-mah">
-            <div class="bd ffh">
-              <p class="fsm">WEΛTHER is a little experiment that started in 2011 to see if there was a more useful way to find out the weather. Sometimes you need a detailed report, but most of the time you just want to be dressed for the day’s weather. What if you could find out the weather and get ideas for what to wear at the same time?</p>
-              <p class="fsm">A little app to start the day with a smile.</p>
+    <div class="page fixed informationPage hide">
+      <div class="body informationBody">
+        <a href="" data-toggle-information class="settingsClose absolute front"><img src="img/close_light.png" width="140" height="140" alt="Close"></a>
+        <div class="row lap-pth">
+          <div class="lap-col span1of1 lap-span3of5">
+            <div class="pvh bright">
+              <div class="mod lap-mah lap-pah desk-mah">
+                <div class="bd ffh bright">
+                  <p class="fsm mbh veryLoose">WEΛTHER is a little experiment that started in 2011 to see if there was a more useful way to find out the weather. Sometimes you need a detailed report, but most of the time you just want to be dressed for the day’s weather. What if you could find out the weather and get ideas for what to wear at the same time?</p>
+                  <p class="fsm veryLoose">A little app to start the day with a smile.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lap-col span1of1 lap-span2of5">
+            <div class="lap-pah bright">
+              <div class="mod lap-mth lap-mhh lap-pth lap-phh">
+                <div class="bd ffh fwb">
+                  <h3 class="fwb fss loose">Team</h3>
+                  <p class="fss loose"><a href="http://jacobheftmann.com/" class="bright tdu">Jacob</a> is an independent designer based in New York City and his backpack.</p>
+                  <p class="fss loose"><a href="http://jack.ly/" class="bright tdu">Jack</a> is tall, half-Canadian, and, as of recent, a New Yorker.</p>
+                  <p class="fss loose"><a href="http://dijkstra.io" class="bright tdu">Michael</a> lives by the beach in Australia so he doesn't need weather reports.</p>
+                </div>
+              </div>
+
+              <div class="mod lap-mth lap-mhh lap-pth lap-phh">
+                <div class="bd ffh fwb">
+                  <h3 class="fwb fss loose">Credit</h3>
+                  <p class="fss loose">Thanks to our contributors for their good taste: Eiko and Courtney.</p>
+                  <p class="fss loose">Credit to the team at Svpply for their early support. The original app sourced products from there, hence some of the visual references.</p>
+                </div>
+              </div>
+
+              <div class="mod lap-mth lap-mhh lap-pth lap-phh">
+                <div class="bd ffh fwb">
+                  <h3 class="fwb fss loose">Contact</h3>
+                  <p class="fss loose"><a href="http://twitter.com/wevther" target="_blank" class="bright">@wevther</a></p>
+                  <p class="fss loose"><a href="mailto:forecast@wevther.com" class="bright">forecast@wevther.com</a></p>
+                </div>
+              </div>
+
+              <div class="mod lap-mth lap-mhh lap-pth lap-phh">
+                <div class="bd ffh fwb">
+                  <p class="fss">&copy;2013 Wevther, an <a href="http://www.xxix.co/" class="bright">XXIX</a> jam.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="page">
-        <div class="bgDark bright">
-          <div class="pvh">
-            <div class="mod lap-mal desk-mah">
-              <div class="bd ffh fwb">
-                <h3 class="fsm">Team</h3>
-                <p class="fss"><a href="" class="bright tdu">Jacob</a> is an independent designer based in New York City and his backpack.</p>
-                <p class="fss"><a href="" class="bright tdu">Jack</a> is tall, half-Canadian, and, as of recent, a New Yorker.</p>
-                <p class="fss"><a href="" class="bright tdu">Michael</a> lives by the beach in Australia so he doesn't need weather reports.</p>
-              </div>
-            </div>
-
-            <div class="mod lap-mal desk-mah">
-              <div class="bd ffh fwb">
-                <h3 class="fsm">Credit</h3>
-                <p class="fss">Thanks to our contributors for their good taste: Eiko and Courtney.</p>
-                <p class="fss">Credit to the team at Svpply for their early support. The original app sourced products from there, hence some of the visual references.</p>
-              </div>
-            </div>
-
-            <div class="mod lap-mal desk-mah">
-              <div class="bd ffh fwb">
-                <h3 class="fsm">Contact</h3>
-                <p class="fss"><a href="http://twitter.com/wevther" target="_blank" class="bright">@wevther</a></p>
-                <p class="fss"><a href="mailto:forecast@wevther.com" class="bright">forecast@wevther.com</a></p>
-              </div>
-            </div>
-
-            <div class="mod lap-mal desk-mah">
-              <div class="bd ffh fwb">
-                <p class="fss">&copy;2013 Wevther, an XXIX jam.</p>
-              </div>
-            </div>
+      <div class="page navPage fixed span1of1 front lap-block">
+        <div class="mod mhl">
+          <div class="media">
+            <a href="" data-toggle-information><img src="img/logo_white.png" width="193" height="19" alt="Wevther" class="img"></a>
+            <a href="https://itunes.apple.com/us/app/wevther/id723686546?mt=8" class="fst mbn mlh hide lap-block imgExt dark">Download for iOS</a>
+            <a href="http://blog.wevther.com" class="fst mbn mts lap-mtn mlh lap-block imgExt bright">Blog</a>
           </div>
         </div>
       </div>
-    </script>
+    </div>
 
     <script src="js/libs/jquery-1.10.2.js"></script>
     <script src="js/libs/handlebars-1.1.2.js"></script>

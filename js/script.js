@@ -7,14 +7,13 @@ var blocks = [];
 $(function(){
   $(window).resize( function() {
     setupBlocks();
-    setupSettingsPage();
   });
 });
 
 function setupBlocks() {
-  if ($(".block")[0]){
+  if ($(".productBlock")[0]){
     windowWidth = $('.productPage').width();
-    colWidth = $('.block').outerWidth();
+    colWidth = $('.productBlock').outerWidth();
     blocks = [];
     colCount = Math.floor(windowWidth/(colWidth+margin*2));
     for(var i=0;i<colCount;i++){
@@ -25,17 +24,42 @@ function setupBlocks() {
 }
 
 function positionBlocks() {
-  $('.block').each(function(){
+  $('.productBlock').each(function(){
     var min = Array.min(blocks);
     var index = $.inArray(min, blocks);
     var leftPos = margin+(index*(colWidth+margin));
+    var paddingTop = $(this).css('padding-top');
+    var paddingLeft = $(this).css('padding-left');
+    var paddingRight = $(this).css('padding-right');
+    if ($(window).width() > 1500) {
+      var paddingFactor = 150;
+    } else if ($(window).width() > 768) {
+      var paddingFactor = 100;
+    } else {
+      var paddingFactor = 50;
+    }
+
+    if ($(window).width() <= 480) {
+      $(this).css('padding', '5px 12px')
+    } else {
+      var padding = Math.floor((Math.random()*paddingFactor)+50)+'px';
+      if (paddingTop == '0px') { $(this).css('padding', padding) }
+    }
     $(this).css({
+      'position': 'absolute',
       'left':leftPos+'px',
       'top':min+'px',
       'z-index':'-1'
     });
     var height = height = min+$(this).outerHeight()+margin;
     blocks[index] = height;
+    $('.productFooter').css({
+      'position': 'absolute',
+      'left': 0,
+      'top':height+'px',
+      'width': $('.modProducts').width(),
+      'z-index':'-1'
+    });
   });
 }
 
@@ -70,15 +94,23 @@ Array.min = function(array) {
     return Math.min.apply(Math, array);
 };
 
-function toggleSettings() {
-  $('.settingsPage').fadeToggle();
-  $('.settingsClose').fadeToggle();
-  $('.settingsNav').toggleClass('active');
-  $('body').toggleClass('lockScroll')
+function toggleInformation() {
+  $('.informationPage').fadeToggle();
+  $('body').toggleClass('lockScroll');
+  $('#nav').toggleClass('hide');
 }
 
-function setupSettingsPage() {
-  $('.settingsPage').width($(window).width()-120);
+function toggleSettings() {
+  $('.settingsBody').slideToggle();
+  $('.cityToggle').toggleClass('cityToggleOpen');
+  $('.modLocations').html('');
+}
+
+function toggleMobileSettings() {
+  $('.mobileSettingsClose').fadeToggle();
+  $('.mobileSettingsPage').fadeToggle();
+  $('#nav').toggleClass('hide');
+  $('.modLocations').html('');
 }
 
 function loadSettings() {
@@ -91,8 +123,6 @@ function loadSettings() {
 
   $("[data-control-type='temperature_type'][data-control-value='" + temperature_type  + "']").addClass('bgActive dull');
   $("[data-control-type='gender_type'][data-control-value='" + gender_type + "']").addClass('bgActive dull');
-
-  $("[data-control-location]").val(location_name);
 }
 
 function saveSetting(setting, value) {
@@ -118,11 +148,11 @@ function loadLocations(locations) {
   $('.modLocations').html('');
   if(locations.length) {
     locations.slice(0,3).forEach( function(loc) {
-      var html = '<div class="bgInactive hoverBgActive pointer mtt" data-control-location-id="' + loc.weather_id + '" data-control-location-name="' + loc.pretty_name + '"><p class="mbn">' + loc.pretty_name + '</p></div>'
+      var html = '<div class="bgDarkT hoverBgActive pointer bbt bcLightT" data-control-location-id="' + loc.weather_id + '" data-control-location-name="' + loc.pretty_name + '"><p class="fsl mbn">' + loc.pretty_name + '</p></div>'
       $('.modLocations').append(html);
     });
   }
-  $(".settingsPage").animate({ scrollTop: $(document).height() }, "slow");
+  $(".settingsBody").animate({ scrollTop: $(document).height() }, "slow");
   $('.modLocations').slideDown();
 }
 
@@ -145,23 +175,43 @@ function findLocationsWithPosition(position) {
   });
 }
 
-$( document ).ready(function() {
-  loadSettings();
+function zoomDisable(){
+  $('head meta[name=viewport]').remove();
+  $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />');
+}
 
-  $(window).scroll(function(event) {
-    fadeWeather();
-    setupBlocks();
-  });
+function zoomEnable(){
+  $('head meta[name=viewport]').remove();
+  $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1" />');
+}
+
+$(document).ready(function() {
+  loadSettings();
 
   $('body').on({
     'touchmove': function(e) {
-      fadeWeather();
+      //fadeWeather();
     }
   });
 
+  $(document).on("click", '[data-toggle-information]', function() {
+    toggleInformation();
+    return false;
+  });
+
+  $(document).on("click", '[data-toggle-mobile-information]', function() {
+    toggleMobileSettings();
+    toggleInformation();
+    return false;
+  });
+
   $(document).on("click", '[data-toggle-settings]', function() {
-    setupSettingsPage();
     toggleSettings();
+    return false;
+  });
+
+  $(document).on("click", '[data-toggle-mobile-settings]', function() {
+    toggleMobileSettings();
     return false;
   });
 
@@ -175,7 +225,7 @@ $( document ).ready(function() {
     searchLocation(query);
   });
 
-  $(document).on("click", '.settingsPage', function() {
+  $(document).on("click", '.modLocations', function() {
     $('.modLocations').slideUp();
   });
 
@@ -203,5 +253,15 @@ $( document ).ready(function() {
 
     $('[data-control-location]').val(name);
     $('.modLocations').html('');
+    $('.modLocations').slideUp();
+    toggleSettings();
   });
+
+  $("input[type=text], textarea").on({ 'touchstart' : function() {
+      zoomDisable();
+  }});
+
+  $("input[type=text], textarea").on({ 'touchend' : function() {
+      setTimeout(zoomEnable, 500);
+  }});
 });

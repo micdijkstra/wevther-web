@@ -6,9 +6,28 @@
   * @subpackage Position
 **/
 
-.absolute { position: absolute; }
-.fixed { position: fixed; }
-.relative { position: relative; }
-.static { position: static; }
-.front { z-index: 999; }
-.back { z-index: -999; }
+@mixin position-setup($namespace: "") {
+  .#{$namespace}absolute { position: absolute; }
+  .#{$namespace}fixed { position: fixed; }
+  .#{$namespace}relative { position: relative; }
+  .#{$namespace}static { position: static; }
+  .#{$namespace}front { z-index: 999; }
+  .#{$namespace}back { z-index: -999; }
+  .#{$namespace}top { top: 0; }
+  .#{$namespace}bottom { bottom: 0; }
+  .#{$namespace}left { left: 0; }
+  .#{$namespace}right { right: 0; }
+}
+
+/* Palm */
+@include position-setup("");
+
+/* Lap */
+@include media-query(lap){
+  @include position-setup("lap-");
+}
+
+/* Desk */
+@include media-query(desk){
+  @include position-setup("desk-");
+}

@@ -1,15 +1,8 @@
 /* Page Breaks */
-$lap-break-point:             768px;
-$desk-break-point:            1500px;
+$lap-break-point:             640px;
+$desk-break-point:            1150px;
 $max-page-width:              100%;
 $ie-max-page-width:           640px;
-
-/* Spacing */
-$tiny-spacing:                2px;
-$small-spacing:               5px; /* half spacing */
-$medium-spacing:              10px; /* full spacing */
-$large-spacing:               20px; /* double spacing */
-$huge-spacing:                40px; /* double double spacing */
 
 /* Border Height */
 $border-tiny:                 1px;
@@ -24,7 +17,7 @@ $base-font-size:              12px;
 $base-line-height:            1.75em;
 $base-height:                 21px; /* base-font-size * base-line*height */
 
-$lap-base-font-size:          14px;
+$lap-base-font-size:          15px;
 $lap-base-line-height:        1.75em;
 $lap-base-height:             26px; /* base-font-size * base-line*height */
 
@@ -36,8 +29,8 @@ $desk-base-height:            28px; /* base-font-size * base-line*height */
 $tiny-spacing:                1px;
 $small-spacing:               5px; /* half spacing */
 $medium-spacing:              15px; /* full spacing */
-$large-spacing:               30px; /* double spacing */
-$huge-spacing:                90px; /* double double spacing */
+$large-spacing:               20px; /* double spacing */
+$huge-spacing:                30px; /* double double spacing */
 
 /* Border Width */
 $border-tiny:                 1px;

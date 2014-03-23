@@ -4,8 +4,8 @@ App.ForecastController = Ember.ObjectController.extend({
   gender_type: $.cookie('gender_type'),
   location_id: $.cookie('location_id'),
   location_name: $.cookie('location_name'),
-  isToday: true,
-  isTomorrow: false,
+  dayIsToday: true,
+  dayIsTomorrow: false,
   isUpdated: false,
 
   loadForecast: function() {
@@ -37,7 +37,7 @@ App.ForecastController = Ember.ObjectController.extend({
     city = current_forecast.location.city;
     unit = current_forecast.unit;
 
-    if (this.get('isToday')) {
+    if (this.get('dayIsToday')) {
       icon_url = current_forecast.now.icon_url;
       code = current_forecast.now.code;
       now = current_forecast.now.temp;
@@ -45,9 +45,9 @@ App.ForecastController = Ember.ObjectController.extend({
       high = current_forecast.today.high;
     } else {
       code = current_forecast.tomorrow.code;
-      now = '—';
       low = current_forecast.tomorrow.low;
       high = current_forecast.tomorrow.high;
+      now = high;
       icon_url = current_forecast.tomorrow.icon_url;
     }
 
@@ -59,10 +59,18 @@ App.ForecastController = Ember.ObjectController.extend({
     this.set('forecast_code', code);
 
     this.loadProducts();
-  }.observes('isToday', 'model'),
+
+    gender = $.cookie('gender_type');
+    if(gender == 'male') { gender = 'mens' }
+    if(gender == 'female') { gender = 'womens' }
+    this.setGender(gender);
+    this.setTemp($.cookie('temperature_type'));
+  }.observes('dayIsToday', 'model'),
 
   loadProducts: function() {
     $('.modProducts').hide();
+    $('.forecastInformation').hide();
+    $('.modProductsLoading').show();
     that = this;
     return Ember.$.getJSON('https://wevther-api.herokuapp.com/api/v1/products.json?weather_code=' + this.get('forecast_code') + '&gender=' + this.get('gender_type') + '&low=' + this.convertToF(this.get('forecast_low')) + '&high=' + this.convertToF(this.get('forecast_high')) + '&access_token=e0ijbv02834hv9824hbvn9u4n9482n2&callback=?').then(function(data) {
       that.set('products', data.products);
@@ -73,9 +81,12 @@ App.ForecastController = Ember.ObjectController.extend({
   showProducts: function() {
     $('.productPage').imagesLoaded( function() {
       setTimeout(function() {
+        $('.modProductsLoading').hide();
         $('.modProducts').fadeIn();
+        $('.forecastInformation').fadeIn();
         setupBlocks();
-     }, 500);
+        setupBlocks();
+     }, 3000);
     });
   },
 
@@ -97,19 +108,55 @@ App.ForecastController = Ember.ObjectController.extend({
       return Math.round(f);
     }
   },
+  setGender: function(gender) {
+    this.set('genderIsMens', (gender == 'mens'));
+    this.set('genderIsWomens', (gender == 'womens'));
+    this.set('genderIsAll', (gender == 'all'));
+    if(gender == 'mens') { gender = 'male' }
+    if(gender == 'womens') { gender = 'female' }
+    $.cookie('gender_type', gender);
+    this.set('gender_type', gender);
+  },
+  setTemp: function(temp) {
+    this.set('tempIsC', (temp == 'c'));
+    this.set('tempIsF', (temp == 'f'));
+    $.cookie('temperature_type', temp);
+    this.set('temperature_type', temp);
+  },
 
   actions: {
     updateSetting: function (setting, value) {
       $.cookie(setting, value);
       this.set(setting, value);
     },
-    today: function () {
-      this.set('isToday', true);
-      this.set('isTomorrow', false);
+    set_day_today: function () {
+      this.set('dayIsToday', true);
+      this.set('dayIsTomorrow', false);
     },
-    tomorrow: function () {
-      this.set('isToday', false);
-      this.set('isTomorrow', true);
+    set_day_tomorrow: function () {
+      this.set('dayIsToday', false);
+      this.set('dayIsTomorrow', true);
+    },
+    set_gender_mens: function () {
+      this.setGender('mens');
+    },
+    set_gender_womens: function () {
+      this.setGender('womens');
+    },
+    set_gender_all: function () {
+      this.setGender('all');
+    },
+    set_temp_c: function () {
+      this.setTemp('c');
+    },
+    set_temp_f: function () {
+      this.setTemp('f');
     }
-  }
+  },
+
+  loadiPhonePromo: function() {
+    $('#nav a').hide();
+    $('#promo').fadeIn();
+    $(".modScreenshots").animate({ scrollLeft: '170px' }, "fast");
+  },
 });
