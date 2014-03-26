@@ -240,7 +240,7 @@
 
    <script type="text/x-handlebars" data-template-name='_product'>
      <div class="productBlock">
-       <a {{bind-attr href=product.url}} target="_blank" class="dark productImage">
+       <a {{bind-attr href=product.url}} target="_blank" class="dark productImage" onClick="_gaq.push(['_trackEvent', 'Product', 'Buy', '{{unbound product.name}}']);">
          <div class="mod lap-mal desk-mah">
            <div class="fluid">
              <div class="meta absolute hide">
