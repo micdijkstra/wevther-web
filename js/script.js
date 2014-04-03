@@ -32,8 +32,8 @@ function positionBlocks() {
     var paddingLeft = $(this).css('padding-left');
     var paddingRight = $(this).css('padding-right');
     if ($(window).width() > 1150) {
-      var paddingFactor = 50;
-      var paddingOffset = 50;
+      var paddingFactor = 40;
+      var paddingOffset = 60;
     } else {
       var paddingFactor = 30;
       var paddingOffset = 10;
